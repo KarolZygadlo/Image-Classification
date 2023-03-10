@@ -1,0 +1,10 @@
+\addvspace {-5pt}
+\addvspace {-5pt}
+\contentsline {chapter}{\numberline {1}Wstęp}{3}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Cel pracy}{4}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Zawartość pracy}{4}{section.1.2}%
+\addvspace {-5pt}
+\addvspace {-5pt}
+\addvspace {-5pt}
+\addvspace {-5pt}
+\addvspace {-5pt}
