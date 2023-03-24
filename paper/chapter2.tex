@@ -1,0 +1,50 @@
+\chapter{Wybrane podstawy teoretyczne pracy}
+
+\section{Uczenie głębokie}
+Uczenie głębokie to gałąź uczenia maszynowego, która skupia się na zastosowaniu sztucznych sieci neuronowych z wieloma warstwami ukrytymi. W przeciwieństwie do tradycyjnych metod uczenia maszynowego, takich jak regresja liniowa czy drzewa decyzyjne, uczenie głębokie automatycznie odkrywa reprezentacje danych na różnych poziomach abstrakcji. Jest to kluczowe dla rozwiązywania złożonych problemów, takich jak rozpoznawanie obrazów, przetwarzanie języka naturalnego, rozpoznawanie mowy czy analiza danych biologicznych.
+
+\subsection{Historia uczenia głębokiego}
+Historia uczenia głębokiego sięga lat 40. XX wieku, kiedy to badacze zaczęli eksplorować koncepcje sztucznych neuronów, które próbowały naśladować biologiczne procesy zachodzące w ludzkim mózgu. W 1986 roku Rumelhart, Hinton i Williams wprowadzili algorytm wstecznej propagacji błędów (backpropagation), który umożliwił efektywne uczenie się sieci neuronowych.
+
+W 2006 roku Hinton i Salakhutdinov opublikowali pracę, która przyczyniła się do powstania współczesnego uczenia głębokiego. Przedstawili w niej skonstruowane przez siebie głębokie sieci wstępnie uczące się (deep belief networks) i pokazali, że sieci te potrafią uczyć się reprezentacji danych na wielu poziomach abstrakcji. Od tego czasu uczenie głębokie zyskało na popularności, a rozwój technologii przyczynił się do udoskonalenia algorytmów oraz wykorzystania uczenia głębokiego w praktyce.
+
+\subsection{Zastosowania uczenia głębokiego}
+Uczenie głębokie znalazło szerokie zastosowanie w różnych dziedzinach nauki i przemysłu. Przykłady obejmują:
+\begin{itemize}
+\item Rozpoznawanie obrazów: wykorzystanie sieci konwolucyjnych (CNN) do klasyfikacji obrazów, detekcji obiektów czy segmentacji obrazów.
+\item Przetwarzanie języka naturalnego: stosowanie rekurencyjnych sieci neuronowych (RNN) i mechanizmów uwagi (attention) do tłumaczenia maszynowego, generowania tekstu czy analizy uczuć.
+\item Rozpoznawanie mowy: zastosowanie sieci neuronowych do rozpoznawania mowy i konwersji mowy na tekst.
+\item Wzmocnienie ucznia: wykorzystanie uczenia głębokiego w połączeniu z algorytmami uczenia przez wzmacnianie do sterowania robotami, pojazdami autonomicznymi czy strategiami giełdowymi.
+\end{itemize}
+
+\subsection{Różnice między uczeniem głębokim a innymi technikami uczenia maszynowego}
+Uczenie głębokie różni się od innych technik uczenia maszynowego w kilku kluczowych aspektach:
+
+\begin{itemize}
+\item \textbf{Reprezentacja danych:} Uczenie głębokie automatycznie uczy się reprezentacji danych na różnych poziomach abstrakcji, podczas gdy w tradycyjnych metodach uczenia maszynowego, takich jak SVM czy drzewa decyzyjne, inżynierowie muszą ręcznie projektować cechy (feature engineering), które mają być użyte do uczenia modelu.
+\item \textbf{Architektura sieci:} Sieci neuronowe stosowane w uczeniu głębokim mają wiele warstw ukrytych, co pozwala na uczenie się bardziej złożonych funkcji. W przeciwnym razie, metody uczenia maszynowego często korzystają z modeli o mniejszej złożoności, takich jak regresja liniowa czy drzewa decyzyjne.
+\item \textbf{Skalowalność:} Dzięki efektywnym algorytmom optymalizacji oraz rosnącej mocy obliczeniowej, uczenie głębokie może być stosowane do przetwarzania ogromnych zbiorów danych. W porównaniu, inne techniki uczenia maszynowego mają trudności z działaniem na dużą skalę, szczególnie gdy wymagane jest ekstrahowanie cech z dużych zbiorów danych.
+\item \textbf{Transfer wiedzy:} W uczeniu głębokim istnieje możliwość wykorzystania wiedzy uzyskanej z jednego zadania do innych zadań, co jest nazywane uczeniem transferowym (transfer learning). W tradycyjnym uczeniu maszynowym transfer wiedzy jest trudniejszy do osiągnięcia.
+\end{itemize}
+
+\section{Sieci konwolucyjne}
+Sieci konwolucyjne (CNN) to specjalny rodzaj sieci neuronowych, w których zastosowano warstwy konwolucyjne. Warstwy te analizują obrazy za pomocą filtrów, które są przesuwane po danych wejściowych, generując mapy cech. Filtry te uczą się wykrywać lokalne wzorce, takie jak krawędzie, tekstury czy kształty. Warstwy pooling (agregujące) są stosowane w celu zmniejszenia wymiarowości map cech, co prowadzi do redukcji ilości parametrów w sieci. Sieci konwolucyjne mogą być również wykorzystywane w połączeniu z innymi warstwami, takimi jak warstwy gęsto połączone (fully connected) czy rekurencyjne (RNN), w zależności od problemu, który mają rozwiązać.
+
+\subsection{Wady produkcyjne i ich rodzaje}
+Wady produkcyjne to niezgodności w produkcji, które powodują, że produkt nie spełnia swoich wymagań jakościowych. Mogą być spowodowane przez wiele czynników, takich jak nieprawidłowości w procesie produkcyjnym, zużycie maszyn czy błędy ludzkie. Wady produkcyjne można podzielić na różne rodzaje, w zależności od charakterystyki produktu i procesu produkcyjnego. Niektóre z najbardziej powszechnych rodzajów wad produkcyjnych obejmują:
+
+\begin{itemize}
+\item \textbf{Wady powierzchniowe:} Pęknięcia, zadrapania, zmarszczki, przebarwienia czy zanieczyszczenia na powierzchni produktu.
+\item \textbf{Wady geometryczne:} Niewłaściwe wymiary, kształty czy położenie elementów w stosunku do siebie nawzajem.
+\item \textbf{Wady materiałowe:} Wady w strukturze materiału, takie jak pęcherze powietrza, porowatość czy zanieczyszczenia.
+\item \textbf{Wady funkcjonalne:} Problemy z działaniem produktu wynikające z nieprawidłowego montażu, błędów w projektowaniu czy wadliwych komponentów.
+\end{itemize}
+
+\subsection{Istniejące rozwiązania}
+W przemyśle istnieje wiele rozwiązań do wykrywania wad produkcyjnych. Tradycyjne metody obejmują wizualne sprawdzanie produktów przez operatorów, które może być czasochłonne i podatne na błędy. Inne metody obejmują stosowanie systemów wizyjnych z kamerami i algorytmami przetwarzania obrazów, które analizują produkty pod kątem wad. Te metody jednak często wymagają ręcznego projektowania cech oraz są trudne do skalowania.
+
+Uczenie głębokie, a w szczególności sieci konwolucyjne, oferuje nowe możliwości w zakresie wykrywania wad produkcyjnych. Dzięki automatycznemu uczeniu się reprezentacji danych, sieci konwolucyjne potrafią wykrywać wady na obrazach z wysoką precyzją i są łatwe do skalowania. Ponadto, uczenie transferowe pozwala na zastosowanie wiedzy uzyskanej z jednego zadania do innego, co ułatwia adaptację modeli do różnych rodzajów wad i procesów produkcyjnych.
+
+\subsection{Wybrane języki programowania}
+\subsubsection{Python}
+Python to popularny język programowania o otwartym kodzie źródłowym, który cechuje się prostotą, czytelnością i wszechstronnością. Jest szeroko stosowany w uczeniu maszynowym i uczeniu głębokim dzięki bogatemu ekosystemowi bibliotek, takich jak TensorFlow, PyTorch czy scikit-learn. Python oferuje wiele narzędzi do analizy danych, wizualizacji, pracy z obrazami i dźwię

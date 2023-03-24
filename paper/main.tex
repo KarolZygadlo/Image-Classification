@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper,twoside,openright]{report}
+pie\documentclass[12pt,a4paper,twoside,openright]{report}
 \usepackage{tgtermes}
 \usepackage[T1]{fontenc}
 \usepackage{polski}
@@ -93,11 +93,16 @@
     \includepdf{TitlePage.pdf}
     \end{titlepage}
 \begingroup
-    \let\clearpage\relax
+    % \let\clearpage\relax
     \tableofcontents
     
-    \include{chapter1-wstęp}
-    \include{chapter2-wprowadzenie}
+    \input{chapter1}
+    \input{chapter2}
+    \input{chapter3}
+    \input{chapter4}
+    \input{chapter5}
+    \input{chapter6}
+    \input{chapter7}
 \endgroup
 
 \medskip
