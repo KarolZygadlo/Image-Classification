@@ -40,7 +40,66 @@ Wymagania niefunkcjonalne systemu odnoszą się do cech jakościowych, takich ja
 Podsumowując, wymagania funkcjonalne i niefunkcjonalne mają na celu zapewnienie, że opracowany system klasyfikacji obrazów jest skuteczny, wydajny i skalowalny, oraz że może być używany w różnych kontekstach przemysłowych związanych z kontrolem jakości.
 
 \section{Projekt rozwiązania}
+W tej sekcji przedstawimy projekt proponowanego rozwiązania do klasyfikacji obrazów przedstawiających uszkodzone i prawidłowe elementy. Wybieramy sieć konwolucyjną (CNN) jako kluczową technologię do rozwiązania tego problemu ze względu na jej zdolność do skutecznego uczenia się hierarchicznych reprezentacji danych przestrzennych.
+
+\subsection{Wybór sieci konwolucyjnej}
+Sieci konwolucyjne są szczególnie odpowiednie dla problemów związanych z analizą obrazów, ponieważ potrafią automatycznie uczyć się cech na różnych poziomach abstrakcji. W przeciwnym razie, ręczne projektowanie cech obrazu, zwłaszcza w przypadku złożonych zadań klasyfikacji, może być żmudne i czasochłonne. CNN pozwala nam wykryć lokalne wzorce w obrazach, takie jak kształty i tekstury, które są istotne dla naszego zadania klasyfikacji.
+
+\subsection{Korzyści z zastosowania uczenia głębokiego}
+Uczenie głębokie, jako poddziedzina uczenia maszynowego, oferuje wiele korzyści w kontekście klasyfikacji obrazów. Oto niektóre z nich:
+
+\begin{itemize}
+\item \textbf{Automatyczna ekstrakcja cech:} Uczenie głębokie pozwala na automatyczne wykrywanie istotnych cech w danych, eliminując potrzebę ręcznego projektowania cech. W przypadku klasyfikacji obrazów oznacza to, że sieci głębokie potrafią uczyć się hierarchicznych reprezentacji obrazów, co prowadzi do lepszej wydajności klasyfikacji.
+
+\item \textbf{Generalizacja:} Uczenie głębokie ma zdolność do generalizacji na nowe, niewidziane wcześniej dane. Oznacza to, że model wytrenowany na odpowiednio dużym i różnorodnym zbiorze danych może skutecznie klasyfikować obrazy, które nie były częścią jego zbioru treningowego.
+
+\item \textbf{Skalowalność:} Architektury uczenia głębokiego są elastyczne i łatwo skalowalne. Można je dostosować do różnych rozmiarów i rodzajów danych, co pozwala na efektywne rozwiązanie problemów o różnym stopniu złożoności.
+
+\item \textbf{Wydajność:} Dzięki zastosowaniu akceleratorów sprzętowych, takich jak GPU, proces uczenia głębokich sieci neuronowych można znacznie przyspieszyć, co prowadzi do szybszego rozwoju i wdrożenia modeli.
+
+\end{itemize}
+
+\subsection{Ogólny zarys rozwiązania}
+Proponowane rozwiązanie będzie oparte na sieci konwolucyjnej (CNN), która będzie trenowana na danych obrazowych przedstawiających uszkodzone i prawidłowe elementy. Przygotowany model będzie następnie testowany na zbiorze testowym w celu oceny jego dokładności oraz zdolności generalizacji.
+
+W kolejnych podsekcjach przedstawimy szczegółowe etapy procesu projektowania rozwiązania, takie jak:
+
+\begin{itemize}
+\item Import bibliotek
+\item Wczytywanie danych
+\item Przygotowanie danych do uczenia
+\item Podział danych na zestawy treningowe, walidacyjne i testowe
+\item Implementacja i trenowanie modelu CNN
+\item Ewaluacja wyników
+\end{itemize}
+
+Na podstawie uzyskanych wyników będziemy mogli ocenić jakość opracowanego rozwiązania oraz jego potencjalne ograniczenia. W miarę potrzeby będziemy również analizować możliwości dalszego rozwoju i optymalizacji modelu.
+
 \subsection{Import bibliotek}
+W tej części omówimy wykorzystane biblioteki oraz ich zastosowanie w projekcie. W naszym rozwiązaniu korzystamy z następujących bibliotek:
+
+\begin{itemize}
+\item \textbf{TensorFlow:} Główna biblioteka do uczenia głębokiego, która umożliwia definiowanie, trenowanie i ewaluację modeli sieci neuronowych. W projekcie używamy TensorFlow do implementacji sieci konwolucyjnej (CNN) oraz zarządzania procesem uczenia i walidacji modelu.
+
+\item \textbf{OpenCV:} Popularna biblioteka do przetwarzania obrazów, która umożliwia wczytywanie, modyfikowanie i zapisywanie obrazów w różnych formatach. W projekcie używamy OpenCV do wczytywania obrazów z dysku, ich przekształceń (np. skalowanie, obrót), a także sprawdzania poprawności danych obrazowych.
+
+\item \textbf{Matplotlib:} Biblioteka do generowania wysokiej jakości wykresów 2D i 3D. W projekcie używamy Matplotlib do wizualizacji danych, takich jak wykresy dokładności i straty w trakcie procesu uczenia oraz prezentacji wyników klasyfikacji obrazów.
+
+\item \textbf{NumPy:} Biblioteka do obsługi macierzy wielowymiarowych, która oferuje wiele funkcji matematycznych o dużej wydajności. W projekcie używamy NumPy do manipulacji danymi obrazowymi, przetwarzania macierzy oraz realizacji obliczeń matematycznych.
+
+\end{itemize}
+
+Do pracy z tymi bibliotekami importujemy je na początku skryptu, korzystając z poniższego kodu:
+
+\begin{lstlisting}[language=Python]
+import tensorflow as tf
+import cv2
+import matplotlib.pyplot as plt
+import numpy as np
+\end{lstlisting}
+
+Dzięki temu mamy dostęp do wszystkich funkcji i klas oferowanych przez te biblioteki, co pozwala nam na efektywną realizację projektu.
+
 \subsection{Wczytywanie danych}
 \subsection{Przygotowanie danych do uczenia}
 \subsection{Podział danych na zestawy treningowe, walidacyjne i testowe}
