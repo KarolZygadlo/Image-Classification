@@ -1,5 +1,44 @@
 \chapter{Projekt systemu}
+
 \section{Wymagania}
+
+W tej sekcji opisane zostaną wymagania funkcjonalne i niefunkcjonalne systemu klasyfikacji obrazów. Wymagania funkcjonalne są bezpośrednio związane z funkcjami, które system powinien realizować, natomiast wymagania niefunkcjonalne dotyczą cech jakościowych systemu.
+
+\subsection{Wymagania funkcjonalne}
+Wymagania funkcjonalne systemu obejmują następujące elementy:
+
+\begin{enumerate}
+\item \textbf{Wczytywanie i przetwarzanie danych wejściowych (obrazów):} System powinien być w stanie wczytać dane wejściowe w postaci obrazów oraz przetworzyć je w celu przygotowania do analizy przez model.
+
+\item \textbf{Trenowanie modelu na zbiorze treningowym:} System powinien być wyposażony w model oparty na uczeniu głębokim, który jest trenowany na zbiorze treningowym, zawierającym obrazy uszkodzonych i prawidłowych elementów.
+
+\item \textbf{Walidacja modelu na zbiorze walidacyjnym:} System powinien wykorzystywać zbiór walidacyjny, aby sprawdzić jakość modelu w trakcie procesu trenowania. Walidacja pozwala dostosować hiperparametry modelu, aby uniknąć nadmiernego dopasowania (overfitting).
+
+\item \textbf{Testowanie modelu na zbiorze testowym:} Po zakończeniu trenowania, system powinien zostać przetestowany na zbiorze testowym, który zawiera obrazy nieznane dla modelu. Wyniki testów pozwolą ocenić ostateczną jakość modelu.
+
+\item \textbf{Klasyfikacja obrazów na części uszkodzone i prawidłowe:} Głównym celem systemu jest klasyfikacja obrazów na części uszkodzone i prawidłowe, co pozwala zidentyfikować problemy z jakością w procesie produkcyjnym.
+
+\end{enumerate}
+
+\subsection{Wymagania niefunkcjonalne}
+Wymagania niefunkcjonalne systemu odnoszą się do cech jakościowych, takich jak:
+
+\begin{enumerate}
+
+\item \textbf{Dokładność klasyfikacji:} System powinien osiągać wysoką dokładność klasyfikacji, aby skutecznie identyfikować uszkodzone i prawidłowe elementy.
+
+\item \textbf{Czas uczenia modelu:} Czas trenowania modelu powinien być na tyle krótki, aby umożliwić szybkie dostosowanie modelu do nowych danych.
+
+\item \textbf{Złożoność obliczeniowa modelu:} Model powinien być na tyle prosty, aby możliwe obliczenia nie obciążały nadmiernie zasobów sprzętowych, jednocześnie zachowując wysoką jakość klasyfikacji.
+
+\item \textbf{Skalowalność systemu:} System powinien być skalowalny, co oznacza, że powinien być w stanie obsłużyć większe ilości danych oraz dostosować się do zmieniających się warunków (np. dodanie nowych klas obiektów do klasyfikacji).
+
+\item \textbf{Współczynnik fałszywych pozytywów i fałszywych negatywów:} System powinien charakteryzować się niskim współczynnikiem fałszywych pozytywów (FP) i fałszywych negatywów (FN). Fałszywe pozytywy to przypadki, gdy system błędnie klasyfikuje uszkodzone elementy jako prawidłowe, natomiast fałszywe negatywy to błędna klasyfikacja prawidłowych elementów jako uszkodzone. Oba te rodzaje błędów mogą prowadzić do niekorzystnych skutków, takich jak przestój w produkcji, czy też przekroczenie progów jakościowych.
+
+\end{enumerate}
+
+Podsumowując, wymagania funkcjonalne i niefunkcjonalne mają na celu zapewnienie, że opracowany system klasyfikacji obrazów jest skuteczny, wydajny i skalowalny, oraz że może być używany w różnych kontekstach przemysłowych związanych z kontrolem jakości.
+
 \section{Projekt rozwiązania}
 \subsection{Import bibliotek}
 \subsection{Wczytywanie danych}
