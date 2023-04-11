@@ -12,29 +12,62 @@ Historia uczenia głębokiego sięga lat 40. XX wieku, kiedy to badacze zaczęli
 W 2006 roku Hinton i Salakhutdinov opublikowali pracę, która przyczyniła się do powstania współczesnego uczenia głębokiego. Przedstawili w niej skonstruowane przez siebie głębokie sieci wstępnie uczące się (deep belief networks) i pokazali, że sieci te potrafią uczyć się reprezentacji danych na wielu poziomach abstrakcji. Od tego czasu uczenie głębokie zyskało na popularności, a rozwój technologii przyczynił się do udoskonalenia algorytmów oraz wykorzystania uczenia głębokiego w praktyce.
 
 \subsection{Zastosowania uczenia głębokiego}
-Uczenie głębokie znalazło szerokie zastosowanie w różnych dziedzinach nauki i przemysłu. Przykłady obejmują:
+Uczenie głębokie znajduje zastosowanie w szerokim spektrum dziedzin naukowych i przemysłowych. Oto niektóre przykłady:
+
 \begin{itemize}
-\item Rozpoznawanie obrazów: wykorzystanie sieci konwolucyjnych (CNN) do klasyfikacji obrazów, detekcji obiektów czy segmentacji obrazów.
-\item Przetwarzanie języka naturalnego: stosowanie rekurencyjnych sieci neuronowych (RNN) i mechanizmów uwagi (attention) do tłumaczenia maszynowego, generowania tekstu czy analizy uczuć.
-\item Rozpoznawanie mowy: zastosowanie sieci neuronowych do rozpoznawania mowy i konwersji mowy na tekst.
-\item Wzmocnienie ucznia: wykorzystanie uczenia głębokiego w połączeniu z algorytmami uczenia przez wzmacnianie do sterowania robotami, pojazdami autonomicznymi czy strategiami giełdowymi.
+\item \textbf{Rozpoznawanie obrazów:} Konwolucyjne sieci neuronowe (CNN) są wykorzystywane do klasyfikacji obrazów, identyfikacji obiektów na zdjęciach, segmentacji obrazów (np. wyodrębnianie elementów pierwszego planu) oraz rozpoznawania twarzy i wyrażeń.
+
+\item \textbf{Przetwarzanie języka naturalnego (NLP):} Rekurencyjne sieci neuronowe (RNN) oraz mechanizmy uwagi (ang. attention mechanisms) są stosowane do tłumaczenia maszynowego, generowania tekstu, analizy uczuć, rozpoznawania nazw własnych i ekstrakcji relacji między nimi, a także odpowiedzi na pytania oparte na kontekście.
+
+\item \textbf{Rozpoznawanie mowy:} Sieci neuronowe, takie jak RNN, są wykorzystywane do rozpoznawania mowy, konwersji mowy na tekst oraz syntezowania mowy. Dzięki temu możliwe jest tworzenie inteligentnych asystentów głosowych, jak Amazon Alexa czy Google Assistant.
+
+\item \textbf{Uczenie ze wzmocnieniem:} Uczenie głębokie jest łączone z algorytmami uczenia ze wzmocnieniem, aby sterować robotami, pojazdami autonomicznymi, strategiami handlowymi na giełdzie czy systemami rekomendacji. Przykładem może być AlphaGo, system stworzony przez DeepMind, który pokonał mistrza świata w grze Go.
+
+\item \textbf{Medycyna i bioinformatyka:} Uczenie głębokie jest wykorzystywane do przewidywania struktury białek, rozpoznawania chorób na podstawie obrazów medycznych, analizy genomów oraz wczesnego diagnozowania i monitorowania chorób.
+
+\item \textbf{Sztuka i twórczość:} Algorytmy uczenia głębokiego są stosowane do generowania sztuki, muzyki, stylizowania zdjęć czy tworzenia filmów.
+
+\item \textbf{Bezpieczeństwo i monitoring:} Uczenie głębokie umożliwia analizę obrazów z kamer monitoringu, rozpoznawanie twarzy oraz detekcję podejrzanych zachowań.
+
 \end{itemize}
 
 \subsection{Różnice między uczeniem głębokim a innymi technikami uczenia maszynowego}
-Uczenie głębokie różni się od innych technik uczenia maszynowego w kilku kluczowych aspektach:
+Uczenie głębokie wyróżnia się od innych technik uczenia maszynowego pod względem kilku kluczowych aspektów:
 
 \begin{itemize}
-\item \textbf{Reprezentacja danych:} Uczenie głębokie automatycznie uczy się reprezentacji danych na różnych poziomach abstrakcji, podczas gdy w tradycyjnych metodach uczenia maszynowego, takich jak SVM czy drzewa decyzyjne, inżynierowie muszą ręcznie projektować cechy (feature engineering), które mają być użyte do uczenia modelu.
-\item \textbf{Architektura sieci:} Sieci neuronowe stosowane w uczeniu głębokim mają wiele warstw ukrytych, co pozwala na uczenie się bardziej złożonych funkcji. W przeciwnym razie, metody uczenia maszynowego często korzystają z modeli o mniejszej złożoności, takich jak regresja liniowa czy drzewa decyzyjne.
-\item \textbf{Skalowalność:} Dzięki efektywnym algorytmom optymalizacji oraz rosnącej mocy obliczeniowej, uczenie głębokie może być stosowane do przetwarzania ogromnych zbiorów danych. W porównaniu, inne techniki uczenia maszynowego mają trudności z działaniem na dużą skalę, szczególnie gdy wymagane jest ekstrahowanie cech z dużych zbiorów danych.
-\item \textbf{Transfer wiedzy:} W uczeniu głębokim istnieje możliwość wykorzystania wiedzy uzyskanej z jednego zadania do innych zadań, co jest nazywane uczeniem transferowym (transfer learning). W tradycyjnym uczeniu maszynowym transfer wiedzy jest trudniejszy do osiągnięcia.
+\item \textbf{Reprezentacja danych:} W przeciwnym do tradycyjnych metod uczenia maszynowego, takich jak maszyny wektorów nośnych (SVM) czy drzewa decyzyjne, gdzie inżynierowie muszą ręcznie projektować cechy (feature engineering) używane do uczenia modelu, uczenie głębokie automatycznie wykorzystuje hierarchiczne reprezentacje danych na różnych poziomach abstrakcji. Pozwala to na efektywniejsze uczenie się złożonych zależności w danych.
+
+\item \textbf{Architektura sieci:} Sieci neuronowe stosowane w uczeniu głębokim mają wiele warstw ukrytych, co pozwala na uczenie się bardziej złożonych funkcji oraz modelowanie wyższego poziomu abstrakcji. Inne metody uczenia maszynowego, takie jak regresja liniowa czy drzewa decyzyjne, zwykle mają mniejszą złożoność modelu i są mniej elastyczne w przetwarzaniu danych o wysokiej złożoności.
+
+\item \textbf{Skalowalność:} Uczenie głębokie może być stosowane do przetwarzania ogromnych zbiorów danych dzięki efektywnym algorytmom optymalizacji oraz rosnącej mocy obliczeniowej, w szczególności dzięki wykorzystaniu jednostek przetwarzania graficznego (GPU). Inne techniki uczenia maszynowego często napotykają trudności związane z działaniem na dużą skalę, zwłaszcza gdy wymagane jest ekstrahowanie cech z dużych zbiorów danych.
+
+\item \textbf{Transfer wiedzy:} Uczenie głębokie pozwala na wykorzystanie wiedzy uzyskanej z jednego zadania do innych zadań, co jest nazywane uczeniem transferowym (transfer learning). W tradycyjnym uczeniu maszynowym transfer wiedzy jest trudniejszy do osiągnięcia, ponieważ ręcznie zaprojektowane cechy są często specyficzne dla konkretnego zadania i trudno je przenieść na inne problemy. Uczenie transferowe w uczeniu głębokim umożliwia oszczędność czasu i zasobów, gdyż model może być przystosowany do nowego zadania z mniejszymi nakładami.
+
 \end{itemize}
+
+Różnice te sprawiają, że uczenie głębokie jest coraz częściej wykorzystywane w różnych dziedzinach nauki i przemysłu, zastępując lub uzupełniając inne techniki uczenia maszynowego.
+
+\subsection{Dalsze różnice między uczeniem głębokim a innymi technikami uczenia maszynowego}
+Oprócz wcześniej wymienionych różnic, uczenie głębokie różni się od innych technik uczenia maszynowego również pod względem:
+
+\begin{itemize}
+\item \textbf{Tolerancja na szum:} Sieci neuronowe wykorzystywane w uczeniu głębokim są bardziej odporne na szum i brakujące dane niż tradycyjne metody uczenia maszynowego. Dzięki swojej zdolności do uczenia się hierarchicznych reprezentacji danych, uczenie głębokie jest w stanie zidentyfikować i uwzględnić istotne cechy mimo występowania zakłóceń czy niekompletności danych.
+
+\item \textbf{Wydajność w przypadku dużych zbiorów danych:} Uczenie głębokie wykazuje szczególnie dobrą wydajność w przypadku dużych zbiorów danych. W miarę jak ilość dostępnych danych rośnie, sieci neuronowe potrafią lepiej się dostosować i osiągać wyższą dokładność niż inne techniki uczenia maszynowego. Dla porównania, tradycyjne metody uczenia maszynowego mogą osiągać gorsze wyniki przy zwiększaniu ilości danych ze względu na ograniczenia ich modeli i zdolności przetwarzania.
+
+\item \textbf{Złożoność modelu:} Uczenie głębokie oferuje większą elastyczność w kształtowaniu modeli, co pozwala na uczenie się bardziej złożonych wzorców i funkcji. W przeciwnym razie, metody uczenia maszynowego często korzystają z modeli o mniejszej złożoności, które mają ograniczoną zdolność do modelowania skomplikowanych zależności.
+
+\item \textbf{Współpraca z innymi metodami uczenia maszynowego:} Uczenie głębokie może być używane w połączeniu z innymi technikami uczenia maszynowego, aby stworzyć bardziej efektywne i wydajne systemy. Na przykład, sieci neuronowe mogą być stosowane razem z drzewami decyzyjnymi czy algorytmami klasteryzacji w celu uzyskania lepszych wyników w przewidywaniu czy klasyfikacji.
+
+\end{itemize}
+
+Różnice te sprawiają, że uczenie głębokie jest coraz bardziej popularne w świecie nauki i przemysłu. Pozwala ono na rozwiązanie wielu problemów, które były trudne lub niemożliwe do rozwiązania za pomocą innych technik uczenia maszynowego, przyczyniając się do szybkiego postępu w dziedzinie sztucznej inteligencji.
 
 \section{Sieci konwolucyjne}
 Sieci konwolucyjne (CNN) to specjalny rodzaj sieci neuronowych, w których zastosowano warstwy konwolucyjne. Warstwy te analizują obrazy za pomocą filtrów, które są przesuwane po danych wejściowych, generując mapy cech. Filtry te uczą się wykrywać lokalne wzorce, takie jak krawędzie, tekstury czy kształty. Warstwy pooling (agregujące) są stosowane w celu zmniejszenia wymiarowości map cech, co prowadzi do redukcji ilości parametrów w sieci. Sieci konwolucyjne mogą być również wykorzystywane w połączeniu z innymi warstwami, takimi jak warstwy gęsto połączone (fully connected) czy rekurencyjne (RNN), w zależności od problemu, który mają rozwiązać. Sieci neuronowe konwolucyjne funkcjonują przez gromadzenie i przetwarzanie dużych zbiorów danych w postaci siatek, a następnie ekstrakcję kluczowych cech szczegółowych w celu klasyfikacji i rozpoznawania. CNN zazwyczaj składają się z trzech głównych typów warstw: konwolucyjnej, buforowej (pooling) i w pełni połączonej. Każda z tych warstw pełni inną funkcję, wykonuje określone zadanie na zebranych danych oraz uczy się coraz bardziej złożonych aspektów.
 
 \subsection{Jak opracowywane są sieci CNN?}
-Sieci neuronowe konwolucyjne (CNN) odgrywają kluczową rolę w uczeniu głębokim i umożliwiają szerokie zastosowania w różnorodnych sektorach na całym świecie. Aby w pełni zrozumieć ich znaczenie, ważne jest, aby zrozumieć sposób ich tworzenia. Tworzenie CNN to czasochłonny i skomplikowany proces, który obejmuje trzy etapy: uczenie, optymalizację oraz wnioskowanie. Intel współpracuje bezpośrednio z programistami i analitykami danych w celu opracowania innowacyjnych metod poprawy i przyspieszenia tego procesu, co pozwala na szybsze i łatwiejsze wdrażanie nowych rozwiązań.
+Sieci neuronowe konwolucyjne (CNN) odgrywają kluczową rolę w uczeniu głębokim i umożliwiają szerokie zastosowania w różnorodnych sektorach na całym świecie. Tworzenie CNN to czasochłonny i skomplikowany proces, który obejmuje trzy etapy: uczenie, optymalizację oraz wnioskowanie.
 \subsubsection{Szkolenia}
 Szkolenie (trening) w konwolucyjnych sieciach neuronowych (CNN) to proces, w którym sieć uczy się rozpoznawać wzorce i cechy na podstawie danych treningowych. Celem tego procesu jest optymalizacja wag sieci neuronowej, tak aby była w stanie dokonywać poprawnych predykcji na nowych, wcześniej niewidzianych danych. Proces szkolenia CNN składa się z kilku kroków:
 \begin{itemize}
@@ -63,20 +96,105 @@ W trakcie wnioskowania sieć neuronowa korzysta z wcześniej nauczonej hierarchi
 Na końcu sieci znajduje się warstwa wyjściowa, która generuje wynik końcowy, czyli predykcję. W przypadku klasyfikacji obrazów może to być prawdopodobieństwo przynależności obrazu do danej klasy. W detekcji obiektów sieć może generować współrzędne prostokątów otaczających obiekty oraz ich kategorie.
 Wnioskowanie jest zwykle znacznie szybsze niż proces uczenia, ponieważ nie wymaga obliczania gradientów ani aktualizacji wag. Jako że wagi są już wcześniej nauczone, sieć koncentruje się na przeprowadzeniu operacji na nowych danych wejściowych, aby wygenerować predykcję. W przypadku aplikacji w czasie rzeczywistym, takich jak rozpoznawanie mowy czy analiza wideo, szybkość wnioskowania jest kluczowym czynnikiem wpływającym na użyteczność i skuteczność sieci neuronowej.
 \section{Wady produkcyjne i ich rodzaje}
-Wady produkcyjne to niezgodności w produkcji, które powodują, że produkt nie spełnia swoich wymagań jakościowych. Mogą być spowodowane przez wiele czynników, takich jak nieprawidłowości w procesie produkcyjnym, zużycie maszyn czy błędy ludzkie. Wady produkcyjne można podzielić na różne rodzaje, w zależności od charakterystyki produktu i procesu produkcyjnego. Niektóre z najbardziej powszechnych rodzajów wad produkcyjnych obejmują:
+Wady produkcyjne to niezgodności w procesie wytwarzania, które prowadzą do tego, że produkt nie spełnia wymagań jakościowych. Wady te mogą wynikać z różnych przyczyn, takich jak błędy w procesie produkcyjnym, zużycie sprzętu czy błędy ludzkie. W zależności od charakterystyki produktu i procesu produkcyjnego można wyróżnić różne rodzaje wad produkcyjnych, takie jak:
 
 \begin{itemize}
-\item \textbf{Wady powierzchniowe:} Pęknięcia, zadrapania, zmarszczki, przebarwienia czy zanieczyszczenia na powierzchni produktu.
-\item \textbf{Wady geometryczne:} Niewłaściwe wymiary, kształty czy położenie elementów w stosunku do siebie nawzajem.
-\item \textbf{Wady materiałowe:} Wady w strukturze materiału, takie jak pęcherze powietrza, porowatość czy zanieczyszczenia.
-\item \textbf{Wady funkcjonalne:} Problemy z działaniem produktu wynikające z nieprawidłowego montażu, błędów w projektowaniu czy wadliwych komponentów.
+\item \textbf{Wady powierzchniowe:} Dotyczą one uszkodzeń lub nieprawidłowości na powierzchni produktu. Wady te obejmują pęknięcia, zadrapania, zmarszczki, przebarwienia czy zanieczyszczenia na powierzchni wyrobu. Mogą być spowodowane przez niewłaściwe parametry procesu, takie jak temperatury czy ciśnienia, niedostateczną kontrolę jakości surowców lub problemy z utrzymaniem czystości w środowisku produkcyjnym.
+
+\item \textbf{Wady geometryczne:} Są to nieprawidłowości związane z wymiarami, kształtami czy wzajemnym położeniem elementów produktu. Wady te obejmują niewłaściwe wymiary, kształty czy położenie części w stosunku do siebie nawzajem. Mogą być spowodowane przez błędy w ustawieniach maszyn, niedokładności w narzędziach pomiarowych czy błędy w projektowaniu produktu.
+
+\item \textbf{Wady materiałowe:} Dotyczą one wad w strukturze materiału, takich jak pęcherze powietrza, porowatość czy zanieczyszczenia. Mogą być spowodowane przez niewłaściwy dobór surowców, problemy z mieszaniem materiałów czy nieodpowiednie warunki procesowe, takie jak szybkość chłodzenia czy czas utwardzania.
+
+\item \textbf{Wady funkcjonalne:} Są to problemy związane z działaniem produktu, wynikające z nieprawidłowego montażu, błędów w projektowaniu czy wadliwych komponentów. Wady te mogą prowadzić do awarii produktu, niebezpiecznych sytuacji czy niezadowolenia klientów. Przyczyną takich wad może być brak precyzyjności w procesie montażu, niewłaściwy dobór komponentów czy niedostateczna kontrola jakości w trakcie projektowania i produkcji.
+
 \end{itemize}
 
-\section{Istniejące rozwiązania}
-W przemyśle istnieje wiele rozwiązań do wykrywania wad produkcyjnych. Tradycyjne metody obejmują wizualne sprawdzanie produktów przez operatorów, które może być czasochłonne i podatne na błędy. Inne metody obejmują stosowanie systemów wizyjnych z kamerami i algorytmami przetwarzania obrazów, które analizują produkty pod kątem wad. Te metody jednak często wymagają ręcznego projektowania cech oraz są trudne do skalowania.
+Rozpoznanie i identyfikacja wad produkcyjnych są kluczowe dla utrzymania wysokiej jakości produktów i zadowolenia klientów. Poprzez monitorowanie procesów produkcyjnych, wprowadzenie systemów kontroli jakości oraz analizę przyczyn wad, przedsiębiorstwa mogą zminimalizować występowanie wad produkcyjnych i uniknąć ich negatywnego wpływu na produkty oraz reputację firmy. Oto kilka sposobów, które mogą pomóc w redukcji wad produkcyjnych:
 
-Uczenie głębokie, a w szczególności sieci konwolucyjne, oferuje nowe możliwości w zakresie wykrywania wad produkcyjnych. Dzięki automatycznemu uczeniu się reprezentacji danych, sieci konwolucyjne potrafią wykrywać wady na obrazach z wysoką precyzją i są łatwe do skalowania. Ponadto, uczenie transferowe pozwala na zastosowanie wiedzy uzyskanej z jednego zadania do innego, co ułatwia adaptację modeli do różnych rodzajów wad i procesów produkcyjnych.
+\begin{itemize}
+\item \textbf{Staranne projektowanie produktu:} Dokładne projektowanie produktu z uwzględnieniem wymagań jakościowych oraz ograniczeń materiałowych i procesowych może pomóc w zapobieganiu wielu wadom produkcyjnym. Współpraca z ekspertami z różnych dziedzin może również pomóc w identyfikacji potencjalnych problemów na etapie projektowania.
+
+\item \textbf{Kontrola jakości surowców:} Przeprowadzanie kontroli jakości dostawców surowców i systematyczne sprawdzanie jakości materiałów przed rozpoczęciem produkcji może pomóc w wykryciu i eliminacji wad materiałowych.
+
+\item \textbf{Optymalizacja procesów produkcyjnych:} Analiza procesów produkcyjnych w celu identyfikacji i eliminacji źródeł wad może prowadzić do wydajniejszej i bardziej niezawodnej produkcji. Obejmuje to zarówno monitorowanie maszyn i narzędzi, jak i przeglądanie procedur produkcyjnych, aby zapewnić ich zgodność z najlepszymi praktykami.
+
+\item \textbf{Szkolenie pracowników:} Zapewnienie odpowiedniego szkolenia i wsparcia dla pracowników może znacznie zmniejszyć ryzyko błędów ludzkich, które prowadzą do wad produkcyjnych. Regularne szkolenia, aktualizacje wiedzy i umiejętności oraz zrozumienie znaczenia jakości w procesie produkcyjnym są kluczowe dla utrzymania wysokiego standardu pracy.
+
+\item \textbf{Systematyczna kontrola jakości:} Wprowadzenie skutecznych systemów kontroli jakości na każdym etapie produkcji, od projektowania po montaż i wysyłkę, może pomóc w wykrywaniu i eliminacji wad produkcyjnych. Monitorowanie, inspekcje i testy jakościowe powinny być przeprowadzane regularnie, aby zapewnić ciągłe doskonalenie jakości produktów.
+
+\item \textbf{Analiza przyczyn wad i działania korygujące:} Gdy wady produkcyjne zostaną zidentyfikowane, ważne jest przeprowadzenie dogłębnej analizy przyczyn i wprowadzenie działań korygujących, aby uniknąć powtarzania się tych samych problemów. Analiza przyczyn może obejmować badanie procesów, surowców, maszyn i praktyk pracy, a także analizę danych historycznych dotyczących jakości w celu identyfikacji wzorców i trendów.
+
+\item \textbf{Utrzymanie maszyn i sprzętu:} Regularne konserwacje, naprawy i modernizacje maszyn oraz sprzętu są niezbędne, aby zapewnić ich sprawne działanie i minimalizować ryzyko wystąpienia wad produkcyjnych związanych z zużyciem czy uszkodzeniami. Planowanie przeglądów i utrzymania oparte na harmonogramie może zapewnić ciągłą działalność produkcyjną i utrzymanie wysokiej jakości.
+
+\item \textbf{Wdrożenie technologii monitorujących i kontrolujących:} Implementacja zaawansowanych technologii, takich jak systemy wizyjne, sensory czy algorytmy uczenia maszynowego, może pozwolić na szybsze i bardziej precyzyjne wykrywanie wad produkcyjnych oraz monitorowanie procesów w czasie rzeczywistym. Dzięki temu możliwe jest szybkie reagowanie na problemy i unikanie poważniejszych konsekwencji.
+
+\item \textbf{Adaptacyjne zarządzanie jakością:} Elastyczne podejście do zarządzania jakością, które pozwala na szybkie dostosowywanie się do zmieniających się warunków rynkowych, wymagań klientów czy pojawiających się problemów, może przyczynić się do efektywniejszego radzenia sobie z wadami produkcyjnymi. Współpraca z innymi działami, takimi jak badania i rozwój czy logistyka, może również pomóc w utrzymaniu wysokiej jakości w całym łańcuchu dostaw.
+
+\end{itemize}
+
+Wdrażając te strategie, przedsiębiorstwa mogą zredukować występowanie wad produkcyjnych i dostarczać produkty o wysokiej jakości, które spełniają oczekiwania klientów. Długoterminowe zobowiązanie do doskonalenia jakości i ciągłego ulepszania procesów produkcyjnych może prowadzić do lepszej konkurencyjności, lojalności klientów oraz wzrostu rentowności firmy.
+
+\section{Istniejące rozwiązania}
+W przemyśle wykorzystuje się wiele technik do wykrywania wad produkcyjnych. Poniżej przedstawiamy obszerny, szczegółowy i techniczny opis istniejących rozwiązań:
+
+\subsection{Kontrola wizualna}
+Tradycyjna kontrola wizualna polega na ręcznym sprawdzaniu produktów przez operatorów, którzy oceniają ich jakość wzrokowo. Kontrola ta może być czasochłonna, niewystarczająco precyzyjna i podatna na błędy ludzkie, a jej efektywność zależy od doświadczenia inspektorów. Chociaż metoda ta jest stosunkowo tania, może prowadzić do niezadowalającej jakości produktów oraz wysokich kosztów związanych z błędami w wykrywaniu wad.
+
+\subsection{Systemy wizyjne}
+Systemy wizyjne to zaawansowane rozwiązania oparte na kamerach oraz algorytmach przetwarzania obrazów. Są one stosowane do automatycznego analizowania produktów pod kątem wad, takich jak nieprawidłowe wymiary czy defekty powierzchniowe. Systemy te mogą być bardziej precyzyjne niż kontrola wizualna, ale często wymagają ręcznego projektowania cech i mogą być trudne do skalowania, gdy liczba różnych produktów czy wad wzrasta.
+
+\subsection{Techniki uczenia maszynowego}
+W celu wykrywania wad produkcyjnych wykorzystuje się również techniki uczenia maszynowego, takie jak maszyny wektorów nośnych (SVM), drzewa decyzyjne czy klasteryzacja. Te metody pozwalają na automatyczne wykrywanie wad na podstawie wcześniej opracowanych cech. Jednakże, wymagają one często ręcznego projektowania cech, co może być czasochłonne i trudne w przypadku złożonych problemów.
+
+\subsection{Uczenie głębokie i sieci konwolucyjne}
+Sieci konwolucyjne (CNN) są jednym z najbardziej zaawansowanych i skutecznych rozwiązań w dziedzinie wykrywania wad produkcyjnych. Dzięki automatycznemu uczeniu się reprezentacji danych, sieci te potrafią wykrywać wady na obrazach z wysoką precyzją i są łatwe do skalowania. Ponadto, uczenie transferowe pozwala na zastosowanie wiedzy uzyskanej z jednego zadania do innego, co ułatwia adaptację modeli do różnych rodzajów wad i procesów produkcyjnych.
+
+\subsection{Internet Rzeczy (IoT) i analiza danych}
+Wykorzystanie technologii Internetu Rzeczy (IoT) w połączeniu z zaawansowanymi technikami analizy danych może przyczynić się do lepszego monitorowania i kontroli procesów produkcyjnych. Inteligentne czujniki i urządzenia IoT mogą zbierać dane ze wszystkich etapów produkcji, takie jak temperatura, ciśnienie, prędkość czy wibracje. Zebrane dane mogą być następnie analizowane w czasie rzeczywistym przy użyciu zaawansowanych algorytmów uczenia maszynowego, aby wykrywać nieprawidłowości w procesie produkcyjnym, które mogą prowadzić do wad.
+
+\subsection{Przegląd rozwiązań}
+
+Wady produkcyjne można wykrywać na różne sposoby, a każde z istniejących rozwiązań ma swoje wady i zalety. Kontrola wizualna jest stosunkowo tania, ale czasochłonna i podatna na błędy. Systemy wizyjne i techniki uczenia maszynowego są bardziej zaawansowane, ale często wymagają ręcznego projektowania cech i mogą być trudne do skalowania.
+
+Uczenie głębokie, a szczególnie sieci konwolucyjne, oferuje nowe możliwości w zakresie wykrywania wad produkcyjnych, zapewniając wysoką precyzję i łatwość skalowania. Ponadto, technologie IoT i analiza danych mogą przyczynić się do lepszego monitorowania i kontroli procesów produkcyjnych, co może prowadzić do szybszego wykrywania i eliminacji wad.
+
+W związku z tym, rozwój i wdrożenie zaawansowanych technik uczenia głębokiego, sieci konwolucyjnych oraz technologii IoT w przemyśle może prowadzić do znacznego zmniejszenia liczby wad produkcyjnych oraz poprawy jakości produktów. W miarę jak te technologie będą się rozwijać, można spodziewać się, że będą one jeszcze bardziej efektywne i powszechnie stosowane w celu monitorowania jakości oraz wykrywania wad produkcyjnych.
 
 \section{Wybrane języki programowania}
-\subsubsection{Python}
-Python to popularny język programowania o otwartym kodzie źródłowym, który cechuje się prostotą, czytelnością i wszechstronnością. Jest szeroko stosowany w uczeniu maszynowym i uczeniu głębokim dzięki bogatemu ekosystemowi bibliotek, takich jak TensorFlow, PyTorch czy scikit-learn. Python oferuje wiele narzędzi do analizy danych, wizualizacji, pracy z obrazami i dźwię
+\subsubsection{C++}
+C++ to język programowania o ogólnym przeznaczeniu, który pozwala na równoczesne korzystanie z różnych paradygmatów programowania, takich jak programowanie proceduralne, obiektowe i generyczne. C++ jest znany ze swojej wydajności i szerokiego zastosowania, zwłaszcza w projektowaniu systemów operacyjnych, gier i aplikacji o wysokiej wydajności. W kontekście uczenia maszynowego i uczenia głębokiego, C++ jest często stosowany do optymalizacji wydajności i budowy szybkich bibliotek, takich jak TensorFlow, które są następnie używane przez programistów Pythona.
+
+\subsubsection{R}
+R to język programowania oraz środowisko oprogramowania do statystyki i grafiki, które jest szeroko używane przez naukowców danych i statystyków. R posiada bogaty ekosystem pakietów do analizy danych, modelowania statystycznego, wizualizacji i uczenia maszynowego, takich jak dplyr, ggplot2 czy randomForest. Chociaż R nie jest tak popularny jak Python w zakresie uczenia głębokiego, istnieje kilka bibliotek, takich jak Keras-R czy MXNet-R, które pozwalają na korzystanie z sieci neuronowych w języku R.
+
+\subsubsection{Java}
+Java to język programowania o ogólnym przeznaczeniu, oparty na koncepcji obiektowości. Java jest szeroko stosowana w różnych dziedzinach, takich jak rozwój aplikacji webowych, mobilnych, desktopowych czy systemów wbudowanych. W uczeniu maszynowym i uczeniu głębokim, Java oferuje różne biblioteki i ramy pracy, takie jak Deeplearning4j, Weka czy Apache Mahout, które umożliwiają stosowanie zaawansowanych technik analizy danych i modelowania. Java jest szczególnie przydatna dla organizacji, które już używają technologii opartych na Javie, dzięki czemu mogą łatwo integrować rozwiązania związane z uczeniem maszynowym z istniejącą infrastrukturą.
+
+\subsubsection{Julia}
+Julia to nowoczesny język programowania o wysokiej wydajności, który został zaprojektowany z myślą o obliczeniach naukowych, analizie danych i uczeniu maszynowym. Julia łączy szybkość i wydajność języków, takich jak C++ czy Fortran, z prostotą i elastycznością języków, takich jak Python czy R. Julia oferuje rosnący ekosystem bibliotek do uczenia maszynowego i uczenia głębokiego, takich jak Flux.jl czy MLJ.jl. Język ten zdobywa popularność wśród naukowców i inżynierów danych ze względu na swoją zdolność do przyspieszania obliczeń i możliwość współpracy z innymi językami programowania.
+
+\subsubsection{Python: szczegółowy opis techniczny}
+Python to dynamicznie typowany, interpretowany język programowania wysokiego poziomu, który został stworzony przez Guido van Rossuma i po raz pierwszy opublikowany w 1991 roku. Zyskał ogromną popularność w różnych dziedzinach, w tym w uczeniu maszynowym i uczeniu głębokim, ze względu na kilka istotnych cech.
+
+\begin{itemize}
+\item \textbf{Składnia:} Python cechuje się prostą i czytelną składnią, która promuje przejrzystość i łatwość zrozumienia kodu. Białe znaki, takie jak wcięcia, są istotne w Pythonie, co zmusza programistów do stosowania konsekwentnych, dobrze zorganizowanych stylów kodowania.
+
+\item \textbf{Biblioteki:} Python posiada bogaty ekosystem bibliotek wspierających uczenie maszynowe i uczenie głębokie, co pozwala na tworzenie zaawansowanych modeli z mniejszym nakładem pracy. Przykłady bibliotek to:
+\begin{itemize}
+    \item TensorFlow: opracowane przez Google, pozwala na tworzenie i wdrożenie modeli uczenia maszynowego i uczenia głębokiego.
+    \item PyTorch: opracowany przez Facebook AI Research, jest popularnym narzędziem do uczenia maszynowego i głębokiego, szczególnie w badaniach naukowych.
+    \item scikit-learn: to biblioteka do uczenia maszynowego, która zawiera wiele prostych i wydajnych narzędzi do analizy danych i modelowania.
+    \item Keras: to wysokopoziomowy interfejs API do tworzenia sieci neuronowych, który może działać na TensorFlow, Theano lub CNTK.
+    \item NumPy: to biblioteka do obsługi wielowymiarowych tablic i macierzy, a także szerokiej gamy funkcji matematycznych.
+    \item Pandas: to biblioteka do manipulacji i analizy danych, która oferuje struktury danych, takie jak DataFrame i Series, umożliwiające łatwe zarządzanie danymi.
+\end{itemize}
+
+\item \textbf{Wsparcie społeczności}: Python cieszy się dużym wsparciem społeczności programistów, co oznacza, że istnieje wiele zasobów online, takich jak dokumentacja, kursy, tutoriale, blogi, fora dyskusyjne i konferencje, które mogą pomóc w nauce i rozwoju umiejętności związanych z uczeniem maszynowym w Pythonie.
+
+\item \textbf{Integracja z innymi językami programowania}: Python można łatwo zintegrować z innymi językami programowania, takimi jak C, C++ czy Fortran, co pozwala na tworzenie wydajnych rozwiązań hybrydowych. Można na przykład pisać kod w Pythonie, który wywołuje funkcje napisane w innych językach, aby zwiększyć wydajność kodu. Takie podejście jest często stosowane w bibliotekach uczenia maszynowego, które używają jądra napisanego w C++ czy Fortranie w celu przyspieszenia obliczeń.
+
+\item \textbf{Jupyter Notebook}: Jupyter Notebook to popularne narzędzie do tworzenia interaktywnych notatników, które umożliwiają tworzenie i udostępnianie dokumentów zawierających zarówno kod, jak i bogate treści medialne, takie jak wykresy, obrazy czy filmy. Jupyter Notebook jest szeroko wykorzystywany w uczeniu maszynowym, analizie danych i wizualizacji, co przyczynia się do jeszcze większej popularności Pythona w tych dziedzinach.
+
+\item \textbf{Przenośność}: Python jest wieloplatformowy, co oznacza, że może być uruchamiany na różnych systemach operacyjnych, takich jak Windows, macOS czy Linux. Daje to programistom większą swobodę w wyborze środowiska pracy oraz pozwala na łatwe wdrożenie rozwiązań na różne platformy.
+
+\end{itemize}
