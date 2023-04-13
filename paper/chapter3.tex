@@ -67,10 +67,9 @@ W kolejnych podsekcjach przedstawimy szczegółowe etapy procesu projektowania r
 \begin{itemize}
 \item Import bibliotek
 \item Wczytywanie danych
-\item Przygotowanie danych do uczenia
+\item Ładowanie danych
+\item Wstępne przetwarzanie danych
 \item Podział danych na zestawy treningowe, walidacyjne i testowe
-\item Implementacja i trenowanie modelu CNN
-\item Ewaluacja wyników
 \end{itemize}
 
 Na podstawie uzyskanych wyników będziemy mogli ocenić jakość opracowanego rozwiązania oraz jego potencjalne ograniczenia. W miarę potrzeby będziemy również analizować możliwości dalszego rozwoju i optymalizacji modelu.
@@ -89,7 +88,7 @@ W tej części omówimy wykorzystane biblioteki oraz ich zastosowanie w projekci
 
 \end{itemize}
 
-Do pracy z tymi bibliotekami importujemy je na początku skryptu, korzystając z poniższego kodu:
+Do pracy z tymi bibliotekami importujemy je, korzystając z poniższego kodu:
 
 \begin{lstlisting}[language=Python]
 import tensorflow as tf
@@ -100,6 +99,92 @@ import numpy as np
 
 Dzięki temu mamy dostęp do wszystkich funkcji i klas oferowanych przez te biblioteki, co pozwala nam na efektywną realizację projektu.
 
+Kolejnym krokiem jest konfiguracja pamięci GPU, aby uniknąć wykorzystania całej dostępnej pamięci przez TensorFlow. Dzięki temu inni użytkownicy również będą mogli korzystać z GPU. Warto zauważyć, że instalacja TensorFlow GPU umożliwia korzystanie z przyspieszenia obliczeń na GPU.
+
+\begin{lstlisting}[language=Python]
+import tensorflow as tf
+import os
+
+gpus = tf.config.experimental.list_physical_devices('GPU')
+for gpu in gpus:
+tf.config.experimental.set_memory_growth(gpu, True)
+
+tf.config.list_physical_devices('GPU')
+\end{lstlisting}
+
 \subsection{Wczytywanie danych}
-\subsection{Przygotowanie danych do uczenia}
+W celu wczytania danych do modelu TensorFlow, zaczynamy od zorganizowania katalogów ze zdjęciami. Klasyfikacja obrazów odbywa się na podstawie nazw folderów, gdzie każdy folder odpowiada jednej klasie. W naszym przypadku, mamy dwa foldery: 'uszkodzony' i 'prawidłowy'.
+
+Podczas wczytywania danych, kontrolujemy jakość zdjęć, sprawdzając, czy można je załadować do biblioteki OpenCV oraz czy ich rozszerzenie jest zgodne z oczekiwanymi (np. JPEG, JPG, BMP, PNG). W przypadku wykrycia uszkodzonych lub nieobsługiwanych obrazów, są one usuwane. Poniżej przedstawiono fragment kodu odpowiedzialny za kontrolę i usuwanie wadliwych zdjęć:
+
+\begin{lstlisting}[language=Python]
+for image_class in os.listdir(data_dir):
+for image in os.listdir(os.path.join(data_dir, image_class)):
+image_path = os.path.join(data_dir, image_class, image)
+try:
+img = cv2.imread(image_path)
+tip = imghdr.what(image_path)
+if tip not in image_exts:
+print('Zdjecie posiada nieobslugiwane rozszerzenie {}'.format(image_path))
+os.remove(image_path)
+except Exception as e:
+print('Wystapil problem ze zdjeciem {}'.format(image_path))
+\end{lstlisting}
+
+\subsection{Ładowanie danych}
+W kolejnym kroku ładujemy dane za pomocą funkcji \texttt{image\_dataset\_from\_directory} z biblioteki TensorFlow. Funkcja ta automatycznie wczytuje zdjęcia z katalogów i przetwarza je do odpowiedniego formatu. Następnie konwertujemy dane na iterator, aby uzyskać dostęp do poszczególnych zdjęć i ich etykiet.
+
+\begin{lstlisting}[language=Python]
+import numpy as np
+from matplotlib import pyplot as plt
+
+data = tf.keras.utils.image_dataset_from_directory('data')
+data_iterator = data.as_numpy_iterator()
+batch = data_iterator.next()
+
+fig, ax = plt.subplots(ncols=4, figsize=(20,20))
+for idx, img in enumerate(batch[0][:4]):
+ax[idx].imshow(img.astype(int))
+ax[idx].title.set_text(batch[1][idx])
+\end{lstlisting}
+
+\subsection{Wstępne przetwarzanie danych}
+Wstępne przetwarzanie danych polega na przygotowaniu danych wejściowych, tak aby model uczenia głębokiego mógł lepiej zrozumieć i wykorzystać informacje zawarte w tych danych. W przypadku tego projektu, wstępne przetwarzanie danych obejmuje przeskalowanie wartości pikseli do zakresu 0-1, co ułatwia uczenie się modelu.
+
+Przeskalowanie wartości pikseli polega na podzieleniu wartości każdego piksela przez 255, co jest najwyższą wartością możliwą dla wartości piksela w formacie RGB. Wynik tego przekształcenia daje wartości zmiennoprzecinkowe w zakresie od 0 do 1, co jest preferowanym zakresem wartości dla wielu algorytmów uczenia głębokiego, w tym również dla sieci neuronowych.
+
+W poniższym fragmencie kodu przeskalowanie wartości pikseli jest wykonywane na całym zbiorze danych za pomocą funkcji \texttt{map}. Funkcja ta przekształca dane przy użyciu podanej funkcji, w tym przypadku przeskalowując wartości pikseli dzieląc przez 255.
+
+\begin{lstlisting}[language=Python]
+data = data.map(lambda x, y: (x / 255, y))
+data.as_numpy_iterator().next()
+\end{lstlisting}
+
+Przeskalowanie wartości pikseli ma kilka zalet. Po pierwsze, przekształcone wartości są mniejsze, co może przyspieszyć proces uczenia się modelu. Po drugie, przeskalowanie wartości pikseli może również przyczynić się do poprawy zdolności generalizacji modelu, ponieważ wartości w podobnym zakresie mogą być łatwiej porównywalne przez sieć neuronową.
+
+Warto zauważyć, że przeskalowanie wartości pikseli jest jednym z wielu możliwych kroków wstępnego przetwarzania danych. W zależności od specyfiki problemu i danych wejściowych, inne kroki wstępnego przetwarzania mogą obejmować augmentację danych (na przykład obroty, przesunięcia, czy odbicia obrazów), konwersję obrazów do skali szarości, normalizację danych, czy też zastosowanie filtrów obrazu. Dobór odpowiednich metod wstępnego przetwarzania danych jest kluczowy dla uzyskania dobrych wyników uczenia się modelu.
+
 \subsection{Podział danych na zestawy treningowe, walidacyjne i testowe}
+Podział danych na zestawy treningowe, walidacyjne i testowe jest kluczowym elementem procesu uczenia się modelu głębokiego. Różne zestawy danych mają różne funkcje w procesie uczenia się:
+
+\begin{itemize}
+\item \textbf{Zestaw treningowy} służy do uczenia modelu. W trakcie uczenia model aktualizuje swoje wagi na podstawie błędów, które popełnia w prognozowaniu etykiet dla danych treningowych.
+\item \textbf{Zestaw walidacyjny} służy do monitorowania postępów modelu podczas uczenia. Na podstawie wyników na danych walidacyjnych, możemy dostosować parametry modelu, takie jak liczba epok, funkcje kosztu czy hiperparametry optymalizatora. Zestaw walidacyjny pomaga również w wykrywaniu problemów, takich jak nadmierne dopasowanie (overfitting).
+\item \textbf{Zestaw testowy} służy do oceny końcowej wydajności modelu po zakończeniu uczenia. Wyniki na danych testowych dają nam informacje na temat zdolności generalizacji modelu do danych, których nie widział wcześniej.
+\end{itemize}
+
+Aby podzielić dane na odpowiednie zestawy, najpierw określamy ich rozmiary. W tym przypadku, 70% danych zostanie przeznaczone na trening, 20% na walidację i 10% na testowanie. Następnie korzystamy z metod \texttt{take}, \texttt{skip} i \texttt{take} dostępnych dla obiektu dataset w TensorFlow, aby wydzielić odpowiednie części danych.
+
+\begin{lstlisting}[language=Python]
+train_size = int(len(data).7)
+val_size = int(len(data).2) + 1
+test_size = int(len(data)*.1) + 1
+
+train = data.take(train_size)
+val = data.skip(train_size).take(val_size)
+test = data.skip(train_size + val_size).take(test_size)
+\end{lstlisting}
+
+Warto zauważyć, że podział danych może być również wykonywany za pomocą funkcji \texttt{train\_test\_split} z biblioteki scikit-learn, jednak w tym przypadku korzystamy z funkcji dostępnych w TensorFlow.
+
+Wybór odpowiedniego podziału danych zależy od wielu czynników, takich jak liczba dostępnych danych, złożoność problemu oraz złożoność modelu. Zbyt mały zestaw treningowy może prowadzić do niedouczenia modelu, podczas gdy zbyt mały zestaw walidacyjny lub testowy może prowadzić do niedokładnej oceny wydajności modelu. Dobrze jest eksperymentować z różnymi proporcjami podziału danych, aby znaleźć optymalny podział dla konkretnego problemu.
