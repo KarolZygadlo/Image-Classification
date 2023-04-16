@@ -1,6 +1,94 @@
 \chapter{Implementacja}
 \section{Budowa modelu sieci neuronowej}
+
+W celu rozwiązania problemu rozpoznawania wad produkcyjnych, zastosowano sieć neuronową opartą na architekturze konwolucyjnej (CNN). Sieci tego typu są powszechnie używane w problemach analizy obrazów, ponieważ potrafią efektywnie wykrywać lokalne wzorce i cechy na obrazach. W tym przypadku, sieć będzie w stanie nauczyć się rozpoznawania różnych wad produkcyjnych na podstawie analizy dostarczonych zdjęć.
+
+Model sieci neuronowej został zaimplementowany przy użyciu biblioteki TensorFlow w języku Python. Poniżej przedstawiono kod źródłowy użyty do budowy modelu:
+
+\begin{verbatim}
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Conv2D, MaxPooling2D, Dense, Flatten, Dropout
+
+model = Sequential()
+
+model.add(Conv2D(16, (3,3), 1, activation='relu', input_shape=(256,256,3)))
+model.add(MaxPooling2D())
+
+model.add(Conv2D(32, (3,3), 1, activation='relu'))
+model.add(MaxPooling2D())
+
+model.add(Conv2D(16, (3,3), 1, activation='relu'))
+model.add(MaxPooling2D())
+
+model.add(Flatten())
+model.add(Dense(256, activation='relu'))
+model.add(Dense(1, activation='sigmoid'))
+\end{verbatim}
+
+Sieć składa się z trzech warstw konwolucyjnych z funkcją aktywacji ReLU oraz warstwami MaxPooling po każdej z nich. Warstwy konwolucyjne uczą się wykrywać lokalne cechy na obrazach, a MaxPooling pomaga w redukcji wymiarowości, co przyspiesza uczenie i zmniejsza ryzyko przeuczenia.
+
+Po trzech warstwach konwolucyjnych, sieć przechodzi przez warstwę Flatten, która spłaszcza dane do jednowymiarowego wektora, co pozwala na przekazanie ich do warstw gęstych (Dense). W tym przypadku, użyto jednej warstwy gęstej z 256 neuronami i funkcją aktywacji ReLU.
+
+Na końcu, sieć kończy się warstwą gęstą z jednym neuronem i funkcją aktywacji sigmoidalną. Ta warstwa odpowiada za generowanie wyników klasyfikacji, gdzie wartość bliska 0 wskazuje na uszkodzony produkt, a wartość bliska 1 na prawidłowy.
+
+Model został skompilowany z użyciem optymalizatora Adam, funkcji straty BinaryCrossentropy oraz metryki dokładności:
+
+\begin{verbatim}
+model.compile('adam', loss=tf.losses.BinaryCrossentropy(),
+metrics=['accuracy'])
+\end{verbatim}
+
+Zastosowanie optymalizatora Adam pomaga w szybszym i skuteczniejszym uczeniu się sieci, gdyż dostosowuje szybkość uczenia na podstawie zmian gradientu. Funkcja straty BinaryCrossentropy jest odpowiednia do problemów klasyfikacji binarnej, takich jak ten, ponieważ pozwala na ocenę różnic między prawdziwymi etykietami a prognozowanymi przez sieć.
+
 \section{Trenowanie modelu}
+
+Trenowanie modelu sieci neuronowej to proces optymalizacji wag w sieci, aby osiągnąć jak najlepszą wydajność w rozpoznawaniu wad produkcyjnych na podstawie zdjęć. W implementacji wykorzystano dane treningowe i walidacyjne do uczenia modelu oraz oceny jego wydajności podczas trenowania. W tej sekcji omówione zostanie trenowanie modelu, analiza wydajności oraz sposób monitorowania procesu uczenia.
+
+Wykorzystano metodę \verb|fit| dostarczoną przez bibliotekę Keras, aby przeszkolić model sieci neuronowej. Poniższy kod przedstawia sposób trenowania modelu przez 5 epok, używając danych treningowych oraz walidacyjnych:
+
+\begin{verbatim}
+hist = model.fit(train, epochs=5, validation_data=val, callbacks=[tensorboard_callback])
+\end{verbatim}
+
+Parametr \verb|epochs| określa liczbę pełnych przebiegów przez dane treningowe. W każdej epoce model próbuje zminimalizować funkcję straty na danych treningowych, dostosowując wagi sieci neuronowej. Użycie danych walidacyjnych pozwala na obserwację procesu uczenia się i wykrycie ewentualnego przeuczenia modelu. Jeśli model zaczyna się przeuczać, dokładność na danych walidacyjnych zacznie maleć, podczas gdy dokładność na danych treningowych nadal będzie rosnąć.
+
+TensorBoard to narzędzie do wizualizacji uczenia sieci neuronowych, które pozwala na monitorowanie różnych metryk, takich jak funkcja straty i dokładność. W implementacji użyto TensorBoard jako wywołania zwrotnego (ang. callback) podczas trenowania, co pozwala na automatyczne zapisywanie danych do logów:
+
+\begin{verbatim}
+logdir='logs'
+tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir=logdir)
+\end{verbatim}
+
+Logi TensorBoard można następnie wyświetlić w przeglądarce, aby uzyskać interaktywną wizualizację procesu uczenia. Aby uruchomić TensorBoard, należy wpisać w terminalu poniższe polecenie, a następnie otworzyć wyświetlony adres URL w przeglądarce:
+
+\begin{verbatim}
+tensorboard --logdir=logs
+\end{verbatim}
+
+Po zakończeniu trenowania modelu, można ocenić jego wydajność na podstawie historii uczenia. Poniższy kod przedstawia sposób tworzenia wykresów straty oraz dokładności dla danych treningowych i walidacyjnych:
+
+\begin{verbatim}
+fig = plt.figure()
+plt.plot(hist.history['loss'], color='teal', label='strata treningowa')
+plt.plot(hist.history['val_loss'], color='orange', label='strata walidacji')
+fig.suptitle('Strata', fontsize=20)
+plt.legend(loc="upper left")
+plt.show()
+
+fig = plt.figure()
+plt.plot(hist.history['accuracy'], color='teal', label='dokładność treningowa')
+plt.plot(hist.history['val_accuracy'], color='orange', label='dokładność walidacji')
+fig.suptitle('Dokładność', fontsize=20)
+plt.legend(loc="upper left")
+plt.show()
+\end{verbatim}
+
+Wykresy te pozwalają na analizę wydajności modelu w czasie trenowania. Na wykresie straty obserwujemy spadek wartości funkcji straty zarówno dla danych treningowych, jak i walidacyjnych. Jeśli model jest odpowiednio uczone, strata na danych walidacyjnych powinna stabilizować się na niskim poziomie.
+
+Wykres dokładności przedstawia, jak dobrze model radzi sobie z klasyfikacją próbek na danych treningowych i walidacyjnych. W miarę jak model się uczy, dokładność powinna rosnąć, aż osiągnie pewien poziom, po którym może wystąpić przeuczenie. W przypadku przeuczenia, dokładność na danych treningowych będzie nadal rosnąć, podczas gdy dokładność na danych walidacyjnych będzie maleć.
+
+Podsumowując, trenowanie modelu sieci neuronowej to proces uczenia modelu na danych treningowych oraz oceny jego wydajności na danych walidacyjnych. Użycie TensorBoard pozwala na monitorowanie tego procesu w czasie rzeczywistym, a analiza wykresów straty oraz dokładności pozwala na ocenę jakości uczenia modelu. Dostosowanie liczby epok oraz parametrów modelu może poprawić jego wydajność i ograniczyć przeuczenie.
+
 \section{Ewaluacja modelu}
 \section{Wizualizacja wyników}
 \section{Testowanie modelu na przykładach}
