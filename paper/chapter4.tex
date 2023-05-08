@@ -54,7 +54,7 @@ validation_data=val, callbacks=[tensorboard_callback])
 
 Parametr \verb|epochs| określa liczbę pełnych przebiegów przez dane treningowe. W każdej epoce model próbuje zminimalizować funkcję straty na danych treningowych, dostosowując wagi sieci neuronowej. Użycie danych walidacyjnych pozwala na obserwację procesu uczenia się i wykrycie ewentualnego przeuczenia modelu. Jeśli model zaczyna się przeuczać, dokładność na danych walidacyjnych zacznie maleć, podczas gdy dokładność na danych treningowych nadal będzie rosnąć.
 
-TensorBoard to narzędzie do wizualizacji uczenia sieci neuronowych, które pozwala na monitorowanie różnych metryk, takich jak funkcja straty i dokładność. W implementacji użyto TensorBoard jako wywołania zwrotnego (ang. callback) podczas trenowania, co pozwala na automatyczne zapisywanie danych do logów:
+TensorBoard to narzędzie do wizualizacji uczenia sieci neuronowych, które pozwala na monitorowanie różnych metryk, takich jak funkcja straty i dokładność. W implementacji użyto TensorBoard jako wywołania zwrotnego podczas trenowania, co pozwala na automatyczne zapisywanie danych do logów:
 
 \begin{verbatim}
 logdir='logs'
@@ -93,12 +93,8 @@ Wykresy te pozwalają na analizę wydajności modelu w czasie trenowania. Na wyk
 
 Wykres dokładności przedstawia, jak dobrze model radzi sobie z klasyfikacją próbek na danych treningowych i walidacyjnych. W miarę jak model się uczy, dokładność powinna rosnąć, aż osiągnie pewien poziom, po którym może wystąpić przeuczenie. W przypadku przeuczenia, dokładność na danych treningowych będzie nadal rosnąć, podczas gdy dokładność na danych walidacyjnych będzie maleć.
 
-Podsumowując, trenowanie modelu sieci neuronowej to proces uczenia modelu na danych treningowych oraz oceny jego wydajności na danych walidacyjnych. Użycie TensorBoard pozwala na monitorowanie tego procesu w czasie rzeczywistym, a analiza wykresów straty oraz dokładności pozwala na ocenę jakości uczenia modelu. Dostosowanie liczby epok oraz parametrów modelu może poprawić jego wydajność i ograniczyć przeuczenie.
-
-\section{Testowanie modelu na przykładach}
-W tej sekcji omówimy testowanie modelu na przykładach obrazów, sprawdzając jego zdolność do klasyfikacji zdjęć jako uszkodzonych lub prawidłowych elementów. Testowanie modelu odbywa się na podstawie dostarczonego kodu źródłowego.
-
-\subsection{Wczytywanie przykładowego obrazu}
+\section{Wczytywanie przykładowego obrazu}
+W tym oraz w kolejnych podrozdziałach omówione zostanie testowanie modelu na przykładach obrazów, sprawdzając jego zdolność do klasyfikacji zdjęć jako uszkodzonych lub prawidłowych elementów. Testowanie modelu odbywa się na podstawie dostarczonego kodu źródłowego.
 Pierwszym krokiem w testowaniu modelu jest wczytanie przykładowego obrazu, który zostanie następnie przekazany do modelu w celu klasyfikacji. Wczytujemy obraz za pomocą biblioteki OpenCV:
 
 \begin{lstlisting}[language=Python]
@@ -107,7 +103,7 @@ plt.imshow(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
 plt.show()
 \end{lstlisting}
 
-\subsection{Przeskalowanie obrazu}
+\section{Przeskalowanie obrazu}
 Przed przekazaniem obrazu do modelu, konieczne jest jego przeskalowanie do wymiarów, na których model został wytrenowany. W naszym przypadku, model został przeszkolony na obrazach o wymiarach 256x256 pikseli. Przeskalowanie obrazu odbywa się za pomocą funkcji \texttt{tf.image.resize}:
 
 \begin{lstlisting}[language=Python]
@@ -116,14 +112,14 @@ plt.imshow(resize.numpy().astype(int))
 plt.show()
 \end{lstlisting}
 
-\subsection{Predykcja klasy obrazu}
+\section{Predykcja klasy obrazu}
 Następnie przekazujemy przeskalowany obraz do modelu, aby uzyskać predykcję klasy. Przed przekazaniem obrazu do modelu, konieczne jest jego normalizowanie przez podzielenie wartości pikseli przez 255:
 
 \begin{lstlisting}[language=Python]
 yhat = model.predict(np.expand_dims(resize/255, 0))
 \end{lstlisting}
 
-\subsection{Interpretacja wyników}
+\section{Interpretacja wyników}
 Wynik predykcji (\texttt{yhat}) to wartość od 0 do 1, która wskazuje na przynależność obrazu do klasy 'prawidłowy'. Aby uzyskać konkretną klasę obrazu, ustalamy próg (np. 0,5) i sprawdzamy, czy wartość predykcji przekracza ten próg:
 
 \begin{lstlisting}[language=Python]
@@ -135,10 +131,8 @@ print(f'Wskazany obraz zostal sklasyfikowany jako czesc uszkodzona')
 
 W ten sposób możemy przetestować model na różnych przykładach obrazów i ocenić jego zdolność do klasyfikacji uszkodzonych i prawidłowych elementów. Testowanie modelu na przykładach jest istotne dla praktycznego zastosowania modelu w rzeczywistych scenariuszach, gdzie musi on poprawnie klasyfikować różnorodne obrazy przedstawiające uszkodzone i prawidłowe elementy.
 
-\section{Zapisywanie i wczytywanie modelu}
+\section{Zapisywanie modelu}
 Aby zachować wytrenowany model i umożliwić jego dalsze wykorzystanie, należy zapisać jego strukturę i parametry. Dzięki temu będziemy mogli wczytać model i użyć go do klasyfikacji obrazów w przyszłości bez konieczności przeprowadzania procesu treningowego ponownie.
-
-\subsection{Zapisywanie modelu}
 Zapisanie modelu w TensorFlow odbywa się za pomocą metody \texttt{save}:
 
 \begin{lstlisting}[language=Python]
@@ -147,7 +141,7 @@ model.save(os.path.join('models', 'imageclassicationversionlive.h5'))
 
 Model zostaje zapisany w formacie HDF5, który przechowuje zarówno architekturę modelu, jak i nauczone wagi.
 
-\subsection{Wczytywanie modelu}
+\section{Wczytywanie modelu}
 Aby wczytać zapisany model, używamy funkcji \texttt{load\_model} z biblioteki TensorFlow:
 
 \begin{lstlisting}[language=Python]
@@ -172,64 +166,3 @@ print(f'Wskazany obraz zostal sklasyfikowany jako czesc uszkodzona')
 \end{lstlisting}
 
 Dzięki zapisywaniu i wczytywaniu modelu mamy możliwość przechowywania i wykorzystywania wyników treningu w dowolnym momencie, co pozwala na efektywniejsze wykorzystanie zasobów obliczeniowych oraz sprawne wdrażanie modeli do praktycznych zastosowań.
-
-\section{Ewaluacja modelu}
-W niniejszym podrozdziale omówiony zostanie proces oceny jakości klasyfikacji przeprowadzonej przez model. Ewaluacja modelu pozwala na ocenę jego skuteczności oraz możliwość identyfikacji obszarów, które mogą wymagać poprawy. Poniżej opisane zostaną kroki procesu ewaluacji.
-
-\subsection{Przygotowanie zbioru testowego}
-Zbiór danych został podzielony na trzy części: dane treningowe (70\% całego zbioru), dane walidacyjne (20\% całego zbioru) oraz dane testowe (10\% całego zbioru). Dane testowe zostały wykorzystane do ostatecznej oceny modelu.
-
-\begin{lstlisting}[language=Python]
-train_size = int(len(data).7)
-val_size = int(len(data).2)+1
-test_size = int(len(data)*.1)+1
-
-train = data.take(train_size)
-val = data.skip(train_size).take(val_size)
-test = data.skip(train_size+val_size).take(test_size)
-\end{lstlisting}
-
-\subsection{Ocena klasyfikacji}
-Aby ocenić jakość klasyfikacji, wykorzystano następujące miary: precyzja, czułość (recall) oraz F1-score. W celu obliczenia tych miar, użyto zbioru testowego oraz funkcji \texttt{classification\_report} z pakietu \texttt{scikit\-learn}.
-
-\begin{lstlisting}[language=Python]
-from sklearn.metrics import classification_report
-
-y_test = []
-y_pred = []
-
-for images, labels in test:
-predictions = model.predict(images)
-predictions = np.round(predictions).reshape(-1)
-y_test.extend(labels.numpy())
-y_pred.extend(predictions)
-
-report = classification_report(y_test, y_pred, target_names=['uszkodzony', 'prawidlowy'], output_dict=True)
-print(report)
-\end{lstlisting}
-
-\subsection{Wizualizacja wyników}
-W celu lepszego zrozumienia wyników ewaluacji, przedstawiono je w postaci wykresu słupkowego. Wykorzystano do tego biblioteki \texttt{seaborn} oraz \texttt{pandas}.
-
-\begin{lstlisting}[language=Python]
-import seaborn as sns
-import pandas as pd
-
-report_df = pd.DataFrame(report).transpose()
-report_df = report_df[:-3]
-
-plt.figure(figsize=(8, 4))
-sns.barplot(x=report_df.index, y='f1-score', data=report_df)
-plt.ylim(0, 1)
-plt.title('F1-score dla poszczegolnych klas')
-plt.xlabel('Klasy')
-plt.ylabel('F1-score')
-plt.show()
-\end{lstlisting}
-
-Na podstawie powyższego kodu, tworzony jest wykres słupkowy prezentujący wartości F1-score dla poszczególnych klas (uszkodzony i prawidłowy).
-
-\section{Analiza wyników}
-Wyniki ewaluacji modelu, przedstawione za pomocą miar precyzji, czułości oraz F1-score, wskazują na skuteczność modelu w klasyfikacji obrazów przedstawiających uszkodzone i prawidłowe elementy. F1-score, będący miarą uwzględniającą zarówno precyzję, jak i czułość, pozwala na ocenę jakości modelu w przypadku niezrównoważonych zbiorów danych.
-
-Warto zwrócić uwagę na wyniki osiągnięte dla poszczególnych klas. W przypadku klasyfikacji elementów uszkodzonych i prawidłowych, wartości F1-score wskazują na zadowalającą skuteczność modelu. Jednakże, wartości te mogą się różnić w zależności od danych treningowych i walidacyjnych, co może wpłynąć na ogólną ocenę modelu.

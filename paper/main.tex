@@ -1,4 +1,6 @@
 \documentclass[12pt,a4paper,twoside,openright]{report}
+\usepackage{setspace} % importowanie pakietu do ustawiania interlinii
+\onehalfspacing % ustawienie interlinii 1.5
 \usepackage{tgtermes}
 \usepackage[T1]{fontenc}
 \usepackage{polski}
@@ -7,35 +9,48 @@
 \pdfgentounicode=1
 \usepackage{amssymb}
 \usepackage{amsmath}
-
+\usepackage{float}
+\usepackage{pgfplots}
+\usepackage{titlesec}
+\usepackage{pgf-pie}
+\usepackage{floatrow}
+\usepackage{sectsty}
 \usepackage{placeins}
 \usepackage{pdfpages}
 \usepackage{csquotes}
 \usepackage{graphicx}
+\usepackage{caption}
 \let\lll\undefined
 \usepackage{indentfirst}
 \usepackage{float}
 \usepackage{tabularx}
 \usepackage{hyperref}
 \graphicspath{ {./img/} }
-\usepackage[left=3.5cm,right=2cm,top=2.5cm,bottom=2.5cm]{geometry}
+\usepackage[left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
 \usepackage{caption}
 \captionsetup{font=small}
 
 \newcommand{\mycaption}[2]{%
   \caption[#1]{#1\\ \footnotesize{#2}}%
 }
-
+\usepackage{listings,lipsum}
+\lstnewenvironment{myverbatim}[1][]{%
+  \lstset{
+    basicstyle=\ttfamily,
+    frame=tb,
+    #1
+  }%
+}{}
+\usepackage{tocloft}
+\usepackage{etoolbox}
 \usepackage{datetime}
 \usepackage{dirtree}
 \renewcommand\DTstyle{\rmfamily}
 \usepackage{listings}
-
+\usepackage{titlesec}
 \usepackage[defernumbers=true,
         locallabelwidth,
         backend=biber]{biblatex}
-
-\addbibresource{bibliography.bib}
 
 \pretocmd{\chapter}{\addtocontents{toc}{\protect\addvspace{-5pt}}}{}{}
 
@@ -63,53 +78,93 @@
     breaklines=true,
 }
 \raggedbottom
-\newdate{date}{10}{06}{2019}
 \usepackage[justification=centering]{caption}
 \makeatletter
+% \def\@makechapterhead#1{%
+% \pagebreak
+%   \vspace*{120\p@}% <----------------- Space from top of page to Chapter #
+%   {\parindent \z@ \raggedright
+%     \ifnum \c@secnumdepth >\m@ne
+%         \huge\bfseries \@chapapp\space \thechapter. \Huge \bfseries #1\par\nobreak% <-- Chapter #
+%         \par\nobreak
+%         \vskip 24\p@% <-------------- Space between Chapter # and title
+%   }}
+
+\titlespacing{\section}{0pt}{12pt}{6pt}
+\titlespacing{\subsection}{0pt}{6pt}{6pt}
+\titlespacing{\footnotesize}{0pt}{10pt}
+% Ustawienie domyślnej wielkości czcionki dla sekcji na 13pt
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0mm}{\baselineskip}{0.5\baselineskip}{\normalfont\fontsize{13}{15}\bfseries}}
+\makeatother
+% Ustawienie domyślnej wielkości czcionki dla tabel na 13pt
+\AtBeginEnvironment{tabular}{\fontsize{10}{10}\selectfont}
+\preto\tabular{\centering}
+ % Formatowanie chaptera
+\makeatletter
 \def\@makechapterhead#1{%
-\pagebreak
-  \vspace*{120\p@}% <----------------- Space from top of page to Chapter #
-  {\parindent \z@ \raggedright
+  \vspace*{12\p@}% 
+  {\parindent \z@ \raggedright \normalfont
     \ifnum \c@secnumdepth >\m@ne
-        \huge\bfseries \@chapapp\space \thechapter. \Huge \bfseries #1\par\nobreak% <-- Chapter #
-        \par\nobreak
-        \vskip 24\p@% <-------------- Space between Chapter # and title
+        \fontsize{14pt}{18pt}\bfseries \@chapapp\space \thechapter.\space #1\par\nobreak
+        \vskip 20\p@
+    \fi
+    \interlinepenalty\@M
+    \vskip 6\p@ 
   }}
-  
-  \usepackage{titlesec}
-
-    
-\titlespacing{\section}{0pt}{18pt}{18pt}
-\titlespacing{\subsection}{0pt}{18pt}{18pt}
-
-\author{Karol Zygadło}
-\linespread{1.3}
- \let\cleardoublepage=\clearpage
+\makeatother
 
 
+\author{Kamil Piech}
+\linespread{1.5}
+\let\cleardoublepage=\clearpage
+
+\renewcommand\cftchapfont{\fontsize{12pt}{18pt}\bfseries}
+\renewcommand\cftsecfont{\fontsize{12pt}{18pt}}
+\renewcommand\cftchappagefont{\fontsize{12pt}{18pt}\bfseries}
+\renewcommand\cftsecpagefont{\fontsize{12pt}{18pt}}
+\renewcommand{\cfttoctitlefont}{\vspace{-1.5cm}\fontsize{14pt}{}\bfseries}
 
 \begin{document}
+\captionsetup{font=footnotesize}
     \begin{titlepage}
     \includepdf{TitlePage.pdf}
     \end{titlepage}
-\begingroup
-    % \let\clearpage\relax
     \tableofcontents
-    
-    \input{chapter1}
-    \input{chapter2}
-    \input{chapter3}
-    \input{chapter4}
-    \input{chapter5}
-    \input{chapter6}
-    \input{chapter7}
-\endgroup
+\begingroup
+\setlength{\parindent}{0.7cm}
 
+    % \let\clearpage\relax
+    \include{chapter1}
+    \include{chapter2}
+    \include{chapter3}
+    \include{chapter4}
+    \include{chapter5}
+    \include{chapter6}
+    \include{chapter7}
+\endgroup
 \medskip
-\printbibliography[type=online, title={Netografia\footnote{Podane adresy zostały odwiedzone w maju 2020 roku. Nie ma gwarancji, że po tej dacie będą dalej aktywne lub poprawne.}}]
-\printbibliography[type=book, title={Bibliografia}]
-\lstlistoflistings
+
+\renewcommand\bibname{\vspace{-2cm}\large{Bibliografia}}
+\renewcommand\listfigurename{\vspace{-2cm}\large{Spis rysunków}}
+\renewcommand\listtablename{\vspace{-2cm}\large{Spis tabel}}
+\begin{thebibliography}{12} 
+% \vspace{-1cm}
+\bibitem{book} Yoshua Bengio, Ian Goodfellow, Aaron Courville, Deep Learning Systemy uczące się, Wydawnictwo Naukowe PWN, Warszawa, 2018.
+\bibitem{book} Mariusz Flasiński, Wstęp do sztucznej inteligencji, Wydawnictwo Naukowe PWN, Warszawa, 2018.
+\bibitem{book} Joel Grus, Data science od podstaw. Analiza danych w Pythonie, Helion, Gliwice, 2022.
+\bibitem{book} Ryszard Knosala, Inżynieria produkcji, PWE Polskie Wydawnictwo Ekonomiczne, Warszawa 2017.
+\bibitem{book} Robert A. Kosiński, Sztuczne sieci neuronowe, Wydawnictwo Naukowe PWN, Warszawa, 2017.
+\bibitem{book} Yuxi Hayden Liu, Python Uczenie maszynowe w przykładach TensorFlow 2 PyTorch i scikitlearn, Helion, Gliwice, 2022.
+\bibitem{book} Mark Lutz, Python. Wprowadzenie, Helion, Gliwice, 2022.
+\bibitem{book} Sebastian Raschka, Vahid Mirjalili, Python Machine learning i deep learning, Helion, Gliwice, 2021.
+\bibitem{book} Kazimierz Szatkowski, Nowoczesne zarządzanie produkcją, Wydawnictwo Naukowe PWN, Warszawa 2023.
+\bibitem{book} Jerzy Surma, Hakowanie sztucznej inteligencji, Wydawnictwo Naukowe PWN, Warszawa, 2022.
+\end{thebibliography}
+
+\newpage
 \listoffigures
+\newpage
 \listoftables
 
 \newpage

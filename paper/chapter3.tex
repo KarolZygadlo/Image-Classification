@@ -1,10 +1,6 @@
-\chapter{Projekt systemu}
+\chapter{Wymagania funkcjonalne oraz niefunkcjonalne}
 
-\section{Wymagania}
-
-W tej sekcji opisane zostaną wymagania funkcjonalne i niefunkcjonalne systemu klasyfikacji obrazów. Wymagania funkcjonalne są bezpośrednio związane z funkcjami, które system powinien realizować, natomiast wymagania niefunkcjonalne dotyczą cech jakościowych systemu.
-
-\subsection{Wymagania funkcjonalne}
+\section{Wymagania funkcjonalne}
 Wymagania funkcjonalne systemu obejmują następujące elementy:
 
 \begin{enumerate}
@@ -20,7 +16,7 @@ Wymagania funkcjonalne systemu obejmują następujące elementy:
 
 \end{enumerate}
 
-\subsection{Wymagania niefunkcjonalne}
+\section{Wymagania niefunkcjonalne}
 Wymagania niefunkcjonalne systemu odnoszą się do cech jakościowych, takich jak:
 
 \begin{enumerate}
@@ -37,15 +33,12 @@ Wymagania niefunkcjonalne systemu odnoszą się do cech jakościowych, takich ja
 
 \end{enumerate}
 
-Podsumowując, wymagania funkcjonalne i niefunkcjonalne mają na celu zapewnienie, że opracowany system klasyfikacji obrazów jest skuteczny, wydajny i skalowalny, oraz że może być używany w różnych kontekstach przemysłowych związanych z kontrolem jakości.
+\chapter{Projekt rozwiązania}
 
-\section{Projekt rozwiązania}
-W tej sekcji przedstawimy projekt proponowanego rozwiązania do klasyfikacji obrazów przedstawiających uszkodzone i prawidłowe elementy. Wybieramy sieć konwolucyjną (CNN) jako kluczową technologię do rozwiązania tego problemu ze względu na jej zdolność do skutecznego uczenia się hierarchicznych reprezentacji danych przestrzennych.
+\section{Wybór sieci konwolucyjnej}
+Sieci konwolucyjne są szczególnie odpowiednie dla problemów związanych z analizą obrazów, ponieważ potrafią automatycznie uczyć się cech na różnych poziomach abstrakcji. W przeciwnym razie, ręczne projektowanie cech obrazu, zwłaszcza w przypadku złożonych zadań klasyfikacji, może być żmudne i czasochłonne. CNN pozwala nam wykryć lokalne wzorce w obrazach, takie jak kształty i tekstury, które są istotne dla zadania klasyfikacji.
 
-\subsection{Wybór sieci konwolucyjnej}
-Sieci konwolucyjne są szczególnie odpowiednie dla problemów związanych z analizą obrazów, ponieważ potrafią automatycznie uczyć się cech na różnych poziomach abstrakcji. W przeciwnym razie, ręczne projektowanie cech obrazu, zwłaszcza w przypadku złożonych zadań klasyfikacji, może być żmudne i czasochłonne. CNN pozwala nam wykryć lokalne wzorce w obrazach, takie jak kształty i tekstury, które są istotne dla naszego zadania klasyfikacji.
-
-\subsection{Korzyści z zastosowania uczenia głębokiego}
+\section{Korzyści z zastosowania uczenia głębokiego}
 Uczenie głębokie, jako poddziedzina uczenia maszynowego, oferuje wiele korzyści w kontekście klasyfikacji obrazów. Oto niektóre z nich:
 
 \begin{itemize}
@@ -59,10 +52,10 @@ Uczenie głębokie, jako poddziedzina uczenia maszynowego, oferuje wiele korzyś
 
 \end{itemize}
 
-\subsection{Ogólny zarys rozwiązania}
-Proponowane rozwiązanie będzie oparte na sieci konwolucyjnej (CNN), która będzie trenowana na danych obrazowych przedstawiających uszkodzone i prawidłowe elementy. Przygotowany model będzie następnie testowany na zbiorze testowym w celu oceny jego dokładności oraz zdolności generalizacji.
+\section{Ogólny zarys rozwiązania}
+Zaprogramowane rozwiązanie będzie oparte na sieci konwolucyjnej (CNN), która będzie trenowana na danych obrazowych przedstawiających uszkodzone i prawidłowe elementy. Przygotowany model będzie następnie testowany na zbiorze testowym w celu oceny jego dokładności oraz zdolności generalizacji.
 
-W kolejnych podsekcjach przedstawimy szczegółowe etapy procesu projektowania rozwiązania, takie jak:
+W kolejnych podrozdziałach przedstawione zostną szczegółowe etapy procesu projektowania rozwiązania, takie jak:
 
 \begin{itemize}
 \item Import bibliotek
@@ -72,23 +65,23 @@ W kolejnych podsekcjach przedstawimy szczegółowe etapy procesu projektowania r
 \item Podział danych na zestawy treningowe, walidacyjne i testowe
 \end{itemize}
 
-Na podstawie uzyskanych wyników będziemy mogli ocenić jakość opracowanego rozwiązania oraz jego potencjalne ograniczenia. W miarę potrzeby będziemy również analizować możliwości dalszego rozwoju i optymalizacji modelu.
+Na podstawie uzyskanych wyników będzie można ocenić jakość opracowanego rozwiązania oraz jego potencjalne ograniczenia. 
 
-\subsection{Import bibliotek}
-W tej części omówimy wykorzystane biblioteki oraz ich zastosowanie w projekcie. W naszym rozwiązaniu korzystamy z następujących bibliotek:
+\section{Import bibliotek}
+W tym podrozdziale omówione zostaną wykorzystane biblioteki oraz ich zastosowanie w projekcie. W naszym rozwiązaniu korzystamy z następujących bibliotek:
 
 \begin{itemize}
-\item \textbf{TensorFlow:} Główna biblioteka do uczenia głębokiego, która umożliwia definiowanie, trenowanie i ewaluację modeli sieci neuronowych. W projekcie używamy TensorFlow do implementacji sieci konwolucyjnej (CNN) oraz zarządzania procesem uczenia i walidacji modelu.
+\item \textbf{TensorFlow:} Główna biblioteka do uczenia głębokiego, która umożliwia definiowanie, trenowanie i ewaluację modeli sieci neuronowych. W projekcie wykorzystany jest TensorFlow do implementacji sieci konwolucyjnej (CNN) oraz zarządzania procesem uczenia i walidacji modelu.
 
-\item \textbf{OpenCV:} Popularna biblioteka do przetwarzania obrazów, która umożliwia wczytywanie, modyfikowanie i zapisywanie obrazów w różnych formatach. W projekcie używamy OpenCV do wczytywania obrazów z dysku, ich przekształceń (np. skalowanie, obrót), a także sprawdzania poprawności danych obrazowych.
+\item \textbf{OpenCV:} Popularna biblioteka do przetwarzania obrazów, która umożliwia wczytywanie, modyfikowanie i zapisywanie obrazów w różnych formatach. W projekcie wykorzystany jest OpenCV do wczytywania obrazów z dysku, ich przekształceń (np. skalowanie, obrót), a także sprawdzania poprawności danych obrazowych.
 
-\item \textbf{Matplotlib:} Biblioteka do generowania wysokiej jakości wykresów 2D i 3D. W projekcie używamy Matplotlib do wizualizacji danych, takich jak wykresy dokładności i straty w trakcie procesu uczenia oraz prezentacji wyników klasyfikacji obrazów.
+\item \textbf{Matplotlib:} Biblioteka do generowania wysokiej jakości wykresów 2D i 3D. W projekcie wykorzystany jest Matplotlib do wizualizacji danych, takich jak wykresy dokładności i straty w trakcie procesu uczenia oraz prezentacji wyników klasyfikacji obrazów.
 
-\item \textbf{NumPy:} Biblioteka do obsługi macierzy wielowymiarowych, która oferuje wiele funkcji matematycznych o dużej wydajności. W projekcie używamy NumPy do manipulacji danymi obrazowymi, przetwarzania macierzy oraz realizacji obliczeń matematycznych.
+\item \textbf{NumPy:} Biblioteka do obsługi macierzy wielowymiarowych, która oferuje wiele funkcji matematycznych o dużej wydajności. W projekcie wykorzystany jest NumPy do manipulacji danymi obrazowymi, przetwarzania macierzy oraz realizacji obliczeń matematycznych.
 
 \end{itemize}
 
-Do pracy z tymi bibliotekami importujemy je, korzystając z poniższego kodu:
+Do pracy z tymi bibliotekami należy je zaimportować, korzystając z poniższego kodu:
 
 \begin{lstlisting}[language=Python]
 import tensorflow as tf
@@ -97,9 +90,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 \end{lstlisting}
 
-Dzięki temu mamy dostęp do wszystkich funkcji i klas oferowanych przez te biblioteki, co pozwala nam na efektywną realizację projektu.
+Dzięki temu mamy dostęp do wszystkich funkcji i klas oferowanych przez te biblioteki, co pozwala na efektywną realizację projektu.
 
-Kolejnym krokiem jest konfiguracja pamięci GPU, aby uniknąć wykorzystania całej dostępnej pamięci przez TensorFlow. Dzięki temu inni użytkownicy również będą mogli korzystać z GPU. Warto zauważyć, że instalacja TensorFlow GPU umożliwia korzystanie z przyspieszenia obliczeń na GPU.
+Kolejnym krokiem jest konfiguracja pamięci GPU, aby uniknąć wykorzystania całej dostępnej pamięci przez TensorFlow. Dzięki temu inni użytkownicy również będą mogli korzystać z GPU.
 
 \begin{lstlisting}[language=Python]
 import tensorflow as tf
@@ -112,10 +105,10 @@ tf.config.experimental.set_memory_growth(gpu, True)
 tf.config.list_physical_devices('GPU')
 \end{lstlisting}
 
-\subsection{Wczytywanie danych}
-W celu wczytania danych do modelu TensorFlow, zaczynamy od zorganizowania katalogów ze zdjęciami. Klasyfikacja obrazów odbywa się na podstawie nazw folderów, gdzie każdy folder odpowiada jednej klasie. W naszym przypadku, mamy dwa foldery: 'uszkodzony' i 'prawidłowy'.
+\section{Wczytywanie danych}
+W celu wczytania danych do modelu TensorFlow, należy zacząć od zorganizowania katalogów ze zdjęciami. Klasyfikacja obrazów odbywa się na podstawie nazw folderów, gdzie każdy folder odpowiada jednej klasie. W opisywany, przypadku, są dwa foldery: 'uszkodzony' i 'prawidłowy'.
 
-Podczas wczytywania danych, kontrolujemy jakość zdjęć, sprawdzając, czy można je załadować do biblioteki OpenCV oraz czy ich rozszerzenie jest zgodne z oczekiwanymi (np. JPEG, JPG, BMP, PNG). W przypadku wykrycia uszkodzonych lub nieobsługiwanych obrazów, są one usuwane. Poniżej przedstawiono fragment kodu odpowiedzialny za kontrolę i usuwanie wadliwych zdjęć:
+Podczas wczytywania danych, należy skontrolować jakość zdjęć, sprawdzając, czy można je załadować do biblioteki OpenCV oraz czy ich rozszerzenie jest zgodne z oczekiwanymi (np. JPEG, JPG, BMP, PNG). W przypadku wykrycia uszkodzonych lub nieobsługiwanych obrazów, są one usuwane. Poniżej przedstawiono fragment kodu odpowiedzialny za kontrolę i usuwanie wadliwych zdjęć:
 
 \begin{lstlisting}[language=Python]
 for image_class in os.listdir(data_dir):
@@ -131,8 +124,8 @@ except Exception as e:
 print('Wystapil problem ze zdjeciem {}'.format(image_path))
 \end{lstlisting}
 
-\subsection{Ładowanie danych}
-W kolejnym kroku ładujemy dane za pomocą funkcji \texttt{image\_dataset\_from\_directory} z biblioteki TensorFlow. Funkcja ta automatycznie wczytuje zdjęcia z katalogów i przetwarza je do odpowiedniego formatu. Następnie konwertujemy dane na iterator, aby uzyskać dostęp do poszczególnych zdjęć i ich etykiet.
+\section{Ładowanie danych}
+W kolejnym kroku trzeba załadować dane za pomocą funkcji \texttt{image\_dataset\_from\_directory} z biblioteki TensorFlow. Funkcja ta automatycznie wczytuje zdjęcia z katalogów i przetwarza je do odpowiedniego formatu. Następnie konwertujemy dane na iterator, aby uzyskać dostęp do poszczególnych zdjęć i ich etykiet.
 
 \begin{lstlisting}[language=Python]
 import numpy as np
@@ -148,7 +141,7 @@ ax[idx].imshow(img.astype(int))
 ax[idx].title.set_text(batch[1][idx])
 \end{lstlisting}
 
-\subsection{Wstępne przetwarzanie danych}
+\section{Wstępne przetwarzanie danych}
 Wstępne przetwarzanie danych polega na przygotowaniu danych wejściowych, tak aby model uczenia głębokiego mógł lepiej zrozumieć i wykorzystać informacje zawarte w tych danych. W przypadku tego projektu, wstępne przetwarzanie danych obejmuje przeskalowanie wartości pikseli do zakresu 0-1, co ułatwia uczenie się modelu.
 
 Przeskalowanie wartości pikseli polega na podzieleniu wartości każdego piksela przez 255, co jest najwyższą wartością możliwą dla wartości piksela w formacie RGB. Wynik tego przekształcenia daje wartości zmiennoprzecinkowe w zakresie od 0 do 1, co jest preferowanym zakresem wartości dla wielu algorytmów uczenia głębokiego, w tym również dla sieci neuronowych.
@@ -162,9 +155,7 @@ data.as_numpy_iterator().next()
 
 Przeskalowanie wartości pikseli ma kilka zalet. Po pierwsze, przekształcone wartości są mniejsze, co może przyspieszyć proces uczenia się modelu. Po drugie, przeskalowanie wartości pikseli może również przyczynić się do poprawy zdolności generalizacji modelu, ponieważ wartości w podobnym zakresie mogą być łatwiej porównywalne przez sieć neuronową.
 
-Warto zauważyć, że przeskalowanie wartości pikseli jest jednym z wielu możliwych kroków wstępnego przetwarzania danych. W zależności od specyfiki problemu i danych wejściowych, inne kroki wstępnego przetwarzania mogą obejmować augmentację danych (na przykład obroty, przesunięcia, czy odbicia obrazów), konwersję obrazów do skali szarości, normalizację danych, czy też zastosowanie filtrów obrazu. Dobór odpowiednich metod wstępnego przetwarzania danych jest kluczowy dla uzyskania dobrych wyników uczenia się modelu.
-
-\subsection{Podział danych na zestawy treningowe, walidacyjne i testowe}
+\section{Podział danych na zestawy treningowe, walidacyjne i testowe}
 Podział danych na zestawy treningowe, walidacyjne i testowe jest kluczowym elementem procesu uczenia się modelu głębokiego. Różne zestawy danych mają różne funkcje w procesie uczenia się:
 
 \begin{itemize}
@@ -173,7 +164,7 @@ Podział danych na zestawy treningowe, walidacyjne i testowe jest kluczowym elem
 \item \textbf{Zestaw testowy} służy do oceny końcowej wydajności modelu po zakończeniu uczenia. Wyniki na danych testowych dają nam informacje na temat zdolności generalizacji modelu do danych, których nie widział wcześniej.
 \end{itemize}
 
-Aby podzielić dane na odpowiednie zestawy, najpierw określamy ich rozmiary. W tym przypadku, 70% danych zostanie przeznaczone na trening, 20% na walidację i 10% na testowanie. Następnie korzystamy z metod \texttt{take}, \texttt{skip} i \texttt{take} dostępnych dla obiektu dataset w TensorFlow, aby wydzielić odpowiednie części danych.
+Aby podzielić dane na odpowiednie zestawy, najpierw należy określić ich rozmiary. W tym przypadku, 70\% danych zostanie przeznaczone na trening, 20\% na walidację i 10\% na testowanie. Następnie trzeba skorzystać z metod \texttt{take}, \texttt{skip} i \texttt{take} dostępnych dla obiektu dataset w TensorFlow, aby wydzielić odpowiednie części danych.
 
 \begin{lstlisting}[language=Python]
 train_size = int(len(data).7)
@@ -187,4 +178,4 @@ test = data.skip(train_size + val_size).take(test_size)
 
 Warto zauważyć, że podział danych może być również wykonywany za pomocą funkcji \texttt{train\_test\_split} z biblioteki scikit-learn, jednak w tym przypadku korzystamy z funkcji dostępnych w TensorFlow.
 
-Wybór odpowiedniego podziału danych zależy od wielu czynników, takich jak liczba dostępnych danych, złożoność problemu oraz złożoność modelu. Zbyt mały zestaw treningowy może prowadzić do niedouczenia modelu, podczas gdy zbyt mały zestaw walidacyjny lub testowy może prowadzić do niedokładnej oceny wydajności modelu. Dobrze jest eksperymentować z różnymi proporcjami podziału danych, aby znaleźć optymalny podział dla konkretnego problemu.
+Wybór odpowiedniego podziału danych zależy od wielu czynników, takich jak liczba dostępnych danych, złożoność problemu oraz złożoność modelu. Zbyt mały zestaw treningowy może prowadzić do niedouczenia modelu, podczas gdy zbyt mały zestaw walidacyjny lub testowy może prowadzić do niedokładnej oceny wydajności modelu.

@@ -1,4 +1,48 @@
 \chapter{Podsumowanie}
 \section{Wnioski}
+W wyniku przeprowadzonych badań można wysnuć następujące wnioski:
+
+\begin{enumerate}
+\item Liczba zdjęć użytych do wyuczenia modelu ma znaczący wpływ na jego dokładność w rozpoznawaniu wad produkcyjnych. Wraz ze wzrostem liczby zdjęć użytych do nauki, dokładność modelu zwykle się poprawia.
+\item Model wyuczony na 500 zdjęciach osiągnął najwyższą dokładność w testach, co sugeruje, że większa liczba danych uczących przyczynia się do lepszej generalizacji modelu.
+\item W przypadku małych zbiorów danych, model może być narażony na przetrenowanie, co skutkuje słabszymi wynikami na danych testowych.
+\item Potrzeba dalszych badań nad optymalizacją architektury modelu oraz eksploracją innych technik przetwarzania wstępnego danych, takich jak augmentacja danych, aby poprawić wydajność modelu.
+\item Zastosowanie różnych technik uczenia transferowego może przyczynić się do zwiększenia skuteczności modelu, szczególnie w przypadku mniejszych zbiorów danych.
+\end{enumerate}
+
+W oparciu o przeprowadzone badania, można zidentyfikować następujące kierunki dalszego rozwoju projektu:
+
+\begin{itemize}
+\item Eksploracja innych architektur sieci głębokiego uczenia, takich jak sieci ResNet, DenseNet lub Inception, które mogą osiągać lepsze wyniki w rozpoznawaniu wad produkcyjnych.
+\item Zastosowanie technik augmentacji danych, aby zwiększyć liczbę dostępnych danych uczących oraz poprawić generalizację modelu.
+\item Implementacja mechanizmów regularyzacji, takich jak dropout, aby zmniejszyć ryzyko przetrenowania modelu, zwłaszcza w przypadku małych zbiorów danych.
+\item Analiza wpływu różnych parametrów uczenia, takich jak rozmiar wsadu, współczynnik uczenia czy optymalizator, na dokładność modelu.
+\item Badanie zastosowania uczenia transferowego, wykorzystując wytrenowane na dużych zbiorach danych modele do ekstrakcji cech, co może skrócić czas uczenia oraz poprawić skuteczność modelu na mniejszych zbiorach danych.
+\item Eksploracja zastosowań modelu w innych dziedzinach, takich jak analiza jakości innych produktów, gdzie istnieje potrzeba wykrywania wad na podstawie zdjęć.
+\end{itemize}
+
+W kontekście praktycznym, wyniki badań oraz analizy mogą być wykorzystane do planowania i implementacji systemów kontroli jakości w różnych gałęziach przemysłu. Poprawa wydajności modelu w wykrywaniu wad produkcyjnych może przyczynić się do redukcji kosztów związanych z wadliwymi produktami oraz poprawy ogólnej jakości oferowanych produktów. W dłuższej perspektywie, opracowanie efektywnego i dokładnego modelu rozpoznawania wad może także pomóc w automatyzacji procesów kontroli jakości, co pozwoli na optymalizację zasobów i zwiększenie efektywności produkcji.
+
 \section{Zrealizowane cele}
-\section{Perspektywy}
+
+W ramach niniejszej pracy pt. "Rozpoznawanie wad produkcyjnych z wykorzystaniem uczenia głębokiego" osiągnięto szereg celów, które przyczyniły się do zrozumienia i wykorzystania technik uczenia głębokiego w celu wykrywania wad produkcyjnych. Poniżej przedstawiamy szczegółowy opis zrealizowanych celów:
+
+\begin{itemize}
+\item \textbf{Przegląd literatury :} Przeprowadzono obszerny przegląd literatury, który obejmował analizę podstawowych koncepcji uczenia głębokiego, sieci neuronowych, konwolucyjnych sieci neuronowych (CNN) oraz przegląd zastosowań tych technik w różnych dziedzinach przemysłu. Analiza literatury pozwoliła na zrozumienie podstawowych zagadnień związanych z uczeniem głębokim oraz na identyfikację kluczowych technik i metod, które mogą być wykorzystane w celu rozpoznawania wad produkcyjnych.
+\item \textbf{Przygotowanie danych uczących}
+Zebrano i przygotowano zbiór danych uczących, który obejmował zdjęcia przedstawiające produkty z wadami oraz produkty prawidłowe. Przeprowadzono wstępne przetwarzanie danych, takie jak skalowanie, kadrowanie i normalizację, aby ułatwić proces uczenia modelu. Przygotowanie odpowiedniego zbioru danych uczących stanowi podstawę dla późniejszego etapu uczenia modelu oraz oceny jego skuteczności.
+\item \textbf{Budowa i uczenie modeli}
+Zbudowano modele konwolucyjnych sieci neuronowych (CNN) z różnymi parametrami, takimi jak liczba warstw, rozmiar filtrów, funkcje aktywacji czy optymalizatory. Przeprowadzono uczenie modeli na różnych zbiorach danych uczących, obejmujących 25, 50, 100 oraz 500 zdjęć, co pozwoliło na analizę wpływu liczby danych uczących na skuteczność modelu.
+\item \textbf{Ocena i analiza wyników}
+Przeprowadzono testy modeli na danych testowych, które nie były wykorzystywane podczas uczenia. Analizowano skuteczność modeli na podstawie ich zdolności do poprawnego rozpoznawania produktów z wadami i produktów prawidłowych. Wyniki testów posłużyły do oceny ogólnej skuteczności modeli oraz do identyfikacji obszarów wymagających dalszych usprawnień.
+\item \textbf{Wnioski i kierunki dalszego rozwoju}
+Na podstawie przeprowadzonych badań sformułowano wnioski dotyczące zastosowania uczenia głębokiego w rozpoznawaniu wad produkcyjnych oraz zidentyfikowano kierunki dalszego rozwoju projektu. Wskazano między innymi, że liczba zdjęć użytych do wyuczenia modelu ma znaczący wpływ na jego dokładność, a model wyuczony na większej liczbie zdjęć osiąga lepsze wyniki. Zauważono również, że dalsze badania nad optymalizacją architektury modelu oraz eksploracją innych technik przetwarzania wstępnego danych mogą przyczynić się do poprawy wydajności modelu.
+W ramach dalszego rozwoju projektu zidentyfikowano następujące kierunki:
+\begin{itemize}
+\item Eksploracja innych architektur sieci głębokiego uczenia, takich jak sieci ResNet, DenseNet lub Inception, które mogą osiągać lepsze wyniki w rozpoznawaniu wad produkcyjnych.
+\item Zastosowanie technik augmentacji danych, aby zwiększyć liczbę dostępnych danych uczących oraz poprawić generalizację modelu.
+\item Implementacja mechanizmów regularyzacji, takich jak dropout, aby zmniejszyć ryzyko przetrenowania modelu, zwłaszcza w przypadku małych zbiorów danych.
+\item Analiza wpływu różnych parametrów uczenia, takich jak rozmiar wsadu, współczynnik uczenia czy optymalizator, na dokładność modelu.
+\end{itemize}
+
+\end{itemize}

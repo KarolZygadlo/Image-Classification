@@ -2,14 +2,15 @@
 
 \section{Uczenie głębokie}
 
-Głębokie uczenie, odmiana uczenia maszynowego, koncentruje się na zastosowaniu wielowarstwowych sztucznych sieci neuronowych. W odróżnieniu od klasycznych metod uczenia maszynowego, takich jak regresja liniowa czy drzewa decyzyjne, głębokie uczenie automatycznie odkrywa reprezentacje danych na różnych poziomach abstrakcji, co jest kluczowe dla rozwiązania złożonych problemów (np. rozpoznawanie obrazów, przetwarzanie języka naturalnego, rozpoznawanie mowy czy analiza danych biologicznych). Głębokie uczenie opiera się na naśladowaniu ludzkich mózgów, ucząc się na podstawie obszernych zbiorów danych, a procesory graficzne (GPU) są optymalizowane do pracy z tymi modelami. Wiele technologii AI, które zautomatyzowały i usprawniły zadania analityczne, opiera się na głębokim uczeniu.
+Głębokie uczenie, odmiana uczenia maszynowego, koncentruje się na zastosowaniu wielowarstwowych sztucznych sieci neuronowych. W odróżnieniu od klasycznych metod uczenia maszynowego, takich jak regresja liniowa czy drzewa decyzyjne, głębokie uczenie automatycznie odkrywa reprezentacje danych na różnych poziomach abstrakcji, co jest kluczowe dla rozwiązania złożonych problemów (np. rozpoznawanie obrazów, przetwarzanie języka naturalnego, rozpoznawanie mowy czy analiza danych biologicznych) [1]. 
 
-\subsection{Historia uczenia głębokiego}
-Historia uczenia głębokiego sięga lat 40. XX wieku, kiedy to badacze zaczęli eksplorować koncepcje sztucznych neuronów, które próbowały naśladować biologiczne procesy zachodzące w ludzkim mózgu. W 1986 roku Rumelhart, Hinton i Williams wprowadzili algorytm wstecznej propagacji błędów (backpropagation), który umożliwił efektywne uczenie się sieci neuronowych.
-\paragraph{}
-W 2006 roku Hinton i Salakhutdinov opublikowali pracę, która przyczyniła się do powstania współczesnego uczenia głębokiego. Przedstawili w niej skonstruowane przez siebie głębokie sieci wstępnie uczące się (deep belief networks) i pokazali, że sieci te potrafią uczyć się reprezentacji danych na wielu poziomach abstrakcji. Od tego czasu uczenie głębokie zyskało na popularności, a rozwój technologii przyczynił się do udoskonalenia algorytmów oraz wykorzystania uczenia głębokiego w praktyce.
+Głębokie uczenie opiera się na naśladowaniu ludzkich mózgów, ucząc się na podstawie obszernych zbiorów danych, a procesory graficzne (GPU) są optymalizowane do pracy z tymi modelami. Wiele technologii sztucznej inteligencji, które zautomatyzowały i usprawniły zadania analityczne, opiera się na głębokim uczeniu [3].
 
-\subsection{Zastosowania uczenia głębokiego}
+Historia uczenia głębokiego sięga lat 40. XX wieku, kiedy to badacze zaczęli eksplorować koncepcje sztucznych neuronów, które próbowały naśladować biologiczne procesy zachodzące w ludzkim mózgu. W 1986 roku Rumelhart, Hinton i Williams wprowadzili algorytm wstecznej propagacji błędów, który umożliwił efektywne uczenie się sieci neuronowych [2].
+
+W 2006 roku Hinton i Salakhutdinov opublikowali pracę, która przyczyniła się do powstania współczesnego uczenia głębokiego. Przedstawili w niej skonstruowane przez siebie głębokie sieci wstępnie uczące się (deep belief networks) i pokazali, że sieci te potrafią uczyć się reprezentacji danych na wielu poziomach abstrakcji. Od tego czasu uczenie głębokie zyskało na popularności, a rozwój technologii przyczynił się do udoskonalenia algorytmów oraz wykorzystania uczenia głębokiego w praktyce [2].
+
+\section{Zastosowania uczenia głębokiego}
 Uczenie głębokie znajduje zastosowanie w szerokim spektrum dziedzin naukowych i przemysłowych. Oto niektóre przykłady:
 
 \begin{itemize}
@@ -19,7 +20,7 @@ Uczenie głębokie znajduje zastosowanie w szerokim spektrum dziedzin naukowych 
 
 \item \textbf{Rozpoznawanie mowy:} Sieci neuronowe, takie jak RNN, są wykorzystywane do rozpoznawania mowy, konwersji mowy na tekst oraz syntezowania mowy. Dzięki temu możliwe jest tworzenie inteligentnych asystentów głosowych, jak Amazon Alexa czy Google Assistant.
 
-\item \textbf{Uczenie ze wzmocnieniem:} Uczenie głębokie jest łączone z algorytmami uczenia ze wzmocnieniem, aby sterować robotami, pojazdami autonomicznymi, strategiami handlowymi na giełdzie czy systemami rekomendacji. Przykładem może być AlphaGo, system stworzony przez DeepMind, który pokonał mistrza świata w grze Go.
+\item \textbf{Uczenie ze wzmocnieniem:} Uczenie głębokie jest łączone z algorytmami uczenia ze wzmocnieniem, aby sterować robotami, pojazdami autonomicznymi, strategiami handlowymi na giełdzie czy systemami rekomendacji.
 
 \item \textbf{Medycyna i bioinformatyka:} Uczenie głębokie jest wykorzystywane do przewidywania struktury białek, rozpoznawania chorób na podstawie obrazów medycznych, analizy genomów oraz wczesnego diagnozowania i monitorowania chorób.
 
@@ -29,15 +30,15 @@ Uczenie głębokie znajduje zastosowanie w szerokim spektrum dziedzin naukowych 
 
 \end{itemize}
 
-\subsection{Różnice między uczeniem głębokim a innymi technikami uczenia maszynowego}
+\section{Różnice między uczeniem głębokim a innymi technikami uczenia maszynowego}
 Uczenie głębokie wyróżnia się od innych technik uczenia maszynowego pod względem kilku kluczowych aspektów:
 
 \begin{itemize}
-\item \textbf{Reprezentacja danych:} W przeciwnym do tradycyjnych metod uczenia maszynowego, takich jak maszyny wektorów nośnych (SVM) czy drzewa decyzyjne, gdzie inżynierowie muszą ręcznie projektować cechy (feature engineering) używane do uczenia modelu, uczenie głębokie automatycznie wykorzystuje hierarchiczne reprezentacje danych na różnych poziomach abstrakcji. Pozwala to na efektywniejsze uczenie się złożonych zależności w danych.
+\item \textbf{Reprezentacja danych:} W przeciwnym do tradycyjnych metod uczenia maszynowego, takich jak maszyny wektorów nośnych (SVM) czy drzewa decyzyjne, gdzie inżynierowie muszą ręcznie projektować cechy używane do uczenia modelu, uczenie głębokie automatycznie wykorzystuje hierarchiczne reprezentacje danych na różnych poziomach abstrakcji [3]. Pozwala to na efektywniejsze uczenie się złożonych zależności w danych.
 
-\item \textbf{Architektura sieci:} Sieci neuronowe stosowane w uczeniu głębokim mają wiele warstw ukrytych, co pozwala na uczenie się bardziej złożonych funkcji oraz modelowanie wyższego poziomu abstrakcji. Inne metody uczenia maszynowego, takie jak regresja liniowa czy drzewa decyzyjne, zwykle mają mniejszą złożoność modelu i są mniej elastyczne w przetwarzaniu danych o wysokiej złożoności.
+\item \textbf{Architektura sieci:} Sieci neuronowe stosowane w uczeniu głębokim mają wiele warstw ukrytych, co pozwala na uczenie się bardziej złożonych funkcji oraz modelowanie wyższego poziomu abstrakcji [10]. Inne metody uczenia maszynowego, takie jak regresja liniowa czy drzewa decyzyjne, zwykle mają mniejszą złożoność modelu i są mniej elastyczne w przetwarzaniu danych o wysokiej złożoności.
 
-\item \textbf{Skalowalność:} Uczenie głębokie może być stosowane do przetwarzania ogromnych zbiorów danych dzięki efektywnym algorytmom optymalizacji oraz rosnącej mocy obliczeniowej, w szczególności dzięki wykorzystaniu jednostek przetwarzania graficznego (GPU). Inne techniki uczenia maszynowego często napotykają trudności związane z działaniem na dużą skalę, zwłaszcza gdy wymagane jest ekstrahowanie cech z dużych zbiorów danych.
+\item \textbf{Skalowalność:} Uczenie głębokie może być stosowane do przetwarzania ogromnych zbiorów danych dzięki efektywnym algorytmom optymalizacji oraz rosnącej mocy obliczeniowej, w szczególności dzięki wykorzystaniu jednostek przetwarzania graficznego. Inne techniki uczenia maszynowego często napotykają trudności związane z działaniem na dużą skalę, zwłaszcza gdy wymagane jest ekstrahowanie cech z dużych zbiorów danych.
 
 \item \textbf{Transfer wiedzy:} Uczenie głębokie pozwala na wykorzystanie wiedzy uzyskanej z jednego zadania do innych zadań, co jest nazywane uczeniem transferowym (transfer learning). W tradycyjnym uczeniu maszynowym transfer wiedzy jest trudniejszy do osiągnięcia, ponieważ ręcznie zaprojektowane cechy są często specyficzne dla konkretnego zadania i trudno je przenieść na inne problemy. Uczenie transferowe w uczeniu głębokim umożliwia oszczędność czasu i zasobów, gdyż model może być przystosowany do nowego zadania z mniejszymi nakładami.
 
@@ -47,30 +48,29 @@ Uczenie głębokie wyróżnia się od innych technik uczenia maszynowego pod wzg
 
 \item \textbf{Złożoność modelu:} Uczenie głębokie oferuje większą elastyczność w kształtowaniu modeli, co pozwala na uczenie się bardziej złożonych wzorców i funkcji. W przeciwnym razie, metody uczenia maszynowego często korzystają z modeli o mniejszej złożoności, które mają ograniczoną zdolność do modelowania skomplikowanych zależności.
 
-\item \textbf{Współpraca z innymi metodami uczenia maszynowego:} Uczenie głębokie może być używane w połączeniu z innymi technikami uczenia maszynowego, aby stworzyć bardziej efektywne i wydajne systemy. Na przykład, sieci neuronowe mogą być stosowane razem z drzewami decyzyjnymi czy algorytmami klasteryzacji w celu uzyskania lepszych wyników w przewidywaniu czy klasyfikacji.
-
 \end{itemize}
 
 Różnice te sprawiają, że uczenie głębokie jest coraz bardziej popularne w świecie nauki i przemysłu. Pozwala ono na rozwiązanie wielu problemów, które były trudne lub niemożliwe do rozwiązania za pomocą innych technik uczenia maszynowego, przyczyniając się do szybkiego postępu w dziedzinie sztucznej inteligencji.
 
 \section{Sieci konwolucyjne}
-Sieci konwolucyjne (CNN) to specjalny rodzaj sieci neuronowych, w których zastosowano warstwy konwolucyjne. Warstwy te analizują obrazy za pomocą filtrów, które są przesuwane po danych wejściowych, generując mapy cech. Filtry te uczą się wykrywać lokalne wzorce, takie jak krawędzie, tekstury czy kształty. Warstwy pooling (agregujące) są stosowane w celu zmniejszenia wymiarowości map cech, co prowadzi do redukcji ilości parametrów w sieci. Sieci konwolucyjne mogą być również wykorzystywane w połączeniu z innymi warstwami, takimi jak warstwy gęsto połączone (fully connected) czy rekurencyjne (RNN), w zależności od problemu, który mają rozwiązać. Sieci neuronowe konwolucyjne funkcjonują przez gromadzenie i przetwarzanie dużych zbiorów danych w postaci siatek, a następnie ekstrakcję kluczowych cech szczegółowych w celu klasyfikacji i rozpoznawania. CNN zazwyczaj składają się z trzech głównych typów warstw: konwolucyjnej, buforowej (pooling) i w pełni połączonej. Każda z tych warstw pełni inną funkcję, wykonuje określone zadanie na zebranych danych oraz uczy się coraz bardziej złożonych aspektów.
+Sieci konwolucyjne (CNN) to specjalny rodzaj sieci neuronowych, w których zastosowano warstwy konwolucyjne. Warstwy te analizują obrazy za pomocą filtrów, które są przesuwane po danych wejściowych, generując mapy cech. Filtry te uczą się wykrywać lokalne wzorce, takie jak krawędzie, tekstury czy kształty [1]. Warstwy pooling (agregujące) są stosowane w celu zmniejszenia wymiarowości map cech, co prowadzi do redukcji ilości parametrów w sieci. Sieci konwolucyjne mogą być również wykorzystywane w połączeniu z innymi warstwami, takimi jak warstwy gęsto połączone (fully connected) czy rekurencyjne (RNN), w zależności od problemu, który mają rozwiązać. Sieci neuronowe konwolucyjne funkcjonują przez gromadzenie i przetwarzanie dużych zbiorów danych w postaci siatek, a następnie ekstrakcję kluczowych cech szczegółowych w celu klasyfikacji i rozpoznawania. CNN zazwyczaj składają się z trzech głównych typów warstw: konwolucyjnej, buforowej (pooling) i w pełni połączonej. Każda z tych warstw pełni inną funkcję, wykonuje określone zadanie na zebranych danych oraz uczy się coraz bardziej złożonych aspektów [8].
 
-\subsection{Jak opracowywane są sieci CNN?}
-Sieci neuronowe konwolucyjne (CNN) odgrywają kluczową rolę w uczeniu głębokim i umożliwiają szerokie zastosowania w różnorodnych sektorach na całym świecie. Tworzenie CNN to czasochłonny i skomplikowany proces, który obejmuje trzy etapy: uczenie, optymalizację oraz wnioskowanie.
-\subsubsection{Szkolenia}
-Szkolenie (trening) w konwolucyjnych sieciach neuronowych (CNN) to proces, w którym sieć uczy się rozpoznawać wzorce i cechy na podstawie danych treningowych. Celem tego procesu jest optymalizacja wag sieci neuronowej, tak aby była w stanie dokonywać poprawnych predykcji na nowych, wcześniej niewidzianych danych. Proces szkolenia CNN składa się z kilku kroków:
+\section{Jak opracowywane są sieci CNN?}
+Sieci neuronowe konwolucyjne (CNN) odgrywają kluczową rolę w uczeniu głębokim i umożliwiają szerokie zastosowania w różnorodnych sektorach na całym świecie. Tworzenie CNN to czasochłonny i skomplikowany proces, który obejmuje trzy etapy: szkolenie, optymalizację oraz wnioskowanie [6].
+
+\textbf{Szkolenie} (trening) w konwolucyjnych sieciach neuronowych (CNN) to proces, w którym sieć uczy się rozpoznawać wzorce i cechy na podstawie danych treningowych. Celem tego procesu jest optymalizacja wag sieci neuronowej, tak aby była w stanie dokonywać poprawnych predykcji na nowych, wcześniej niewidzianych danych [5]. Proces szkolenia CNN składa się z kilku kroków:
 \begin{itemize}
-    \item \textbf{Inicjalizacja wag:} Na początek, wagi sieci neuronowej są inicjalizowane losowo lub za pomocą specjalnych technik inicjalizacji.
-    \item \textbf{Przekazanie danych do sieci (propagacja wprzód):} Dane treningowe, takie jak obrazy, są przekazywane przez sieć neuronową. W trakcie tego procesu dane przechodzą przez różne warstwy sieci, takie jak warstwy konwolucyjne, warstwy buforowe (pooling) oraz warstwy w pełni połączone. W każdej warstwie sieć ekstrahuje cechy z danych wejściowych, które są przekazywane do kolejnych warstw.
-    \item \textbf{Obliczenie funkcji straty:} Na końcu sieci neuronowej obliczana jest wartość funkcji straty, która mierzy różnicę między predykcjami sieci a rzeczywistymi etykietami danych treningowych. Funkcja straty jest kluczowym elementem procesu uczenia, ponieważ określa, jak dobrze sieć radzi sobie z zadaniem.
-    \item \textbf{Propagacja wsteczna (Backpropagation): }Po obliczeniu funkcji straty, gradienty tej funkcji są obliczane wstecznie dla każdej warstwy sieci. Gradienty te informują o kierunku, w którym wagi sieci powinny zostać zaktualizowane, aby zmniejszyć wartość funkcji straty.
-    \item \textbf{Aktualizacja wag:} Wagi sieci neuronowej są aktualizowane za pomocą algorytmu optymalizacji, takiego jak stochastyczny spadek gradientu (SGD), Adam czy RMSprop. Algorytm optymalizacji stosuje obliczone gradienty do wag sieci, modyfikując je w taki sposób, aby funkcja straty była mniejsza.
-    \item \textbf{Iteracje i epoki: }Powyższe kroki są powtarzane wielokrotnie dla całego zbioru danych treningowych. Przejście przez cały zbiór danych to jedna epoka. Proces szkolenia zwykle obejmuje wiele epok, aż sieć osiągnie zadowalający poziom dokładności.
+    \item \textbf{Inicjalizacja wag:} Na początek, wagi sieci neuronowej są inicjalizowane losowo lub za pomocą specjalnych technik inicjalizacji [6].
+    \item \textbf{Przekazanie danych do sieci (propagacja wprzód):} Dane treningowe, takie jak obrazy, są przekazywane przez sieć neuronową. W trakcie tego procesu dane przechodzą przez różne warstwy sieci, takie jak warstwy konwolucyjne, warstwy buforowe (pooling) oraz warstwy w pełni połączone. W każdej warstwie sieć ekstrahuje cechy z danych wejściowych, które są przekazywane do kolejnych warstw [6].
+    \item \textbf{Obliczenie funkcji straty:} Na końcu sieci neuronowej obliczana jest wartość funkcji straty, która mierzy różnicę między predykcjami sieci a rzeczywistymi etykietami danych treningowych. Funkcja straty jest kluczowym elementem procesu uczenia, ponieważ określa, jak dobrze sieć radzi sobie z zadaniem [6].
+    \item \textbf{Propagacja wsteczna (Backpropagation): }Po obliczeniu funkcji straty, gradienty tej funkcji są obliczane wstecznie dla każdej warstwy sieci. Gradienty te informują o kierunku, w którym wagi sieci powinny zostać zaktualizowane, aby zmniejszyć wartość funkcji straty [6].
+    \item \textbf{Aktualizacja wag:} Wagi sieci neuronowej są aktualizowane za pomocą algorytmu optymalizacji, takiego jak stochastyczny spadek gradientu (SGD), Adam czy RMSprop. Algorytm optymalizacji stosuje obliczone gradienty do wag sieci, modyfikując je w taki sposób, aby funkcja straty była mniejsza [6].
+    \item \textbf{Iteracje i epoki: }Powyższe kroki są powtarzane wielokrotnie dla całego zbioru danych treningowych. Przejście przez cały zbiór danych to jedna epoka. Proces szkolenia zwykle obejmuje wiele epok, aż sieć osiągnie zadowalający poziom dokładności [6].
 \end{itemize}
-Po zakończeniu procesu szkolenia, CNN jest gotowa do przeprowadzania wnioskowania na nowych danych. Wagi sieci zostały zoptymalizowane, dzięki czemu potrafi ona dokonywać poprawnych predykcji na podstawie cech wykrytych w danych wejściowych.
-\subsubsection{Optymalizacja}
-Optymalizacja w konwolucyjnych sieciach neuronowych (CNN) polega na dostosowywaniu parametrów sieci w celu zminimalizowania funkcji kosztu i poprawy wydajności sieci. Proces optymalizacji prowadzi do lepszego uczenia się przez sieć istotnych cech danych wejściowych, co przekłada się na lepsze wyniki predykcji.
+
+Po zakończeniu procesu szkolenia, CNN jest gotowa do przeprowadzania wnioskowania na nowych danych. Wagi sieci zostały zoptymalizowane, dzięki czemu potrafi ona dokonywać poprawnych predykcji na podstawie cech wykrytych w danych wejściowych [3].
+
+\textbf{Optymalizacja} w konwolucyjnych sieciach neuronowych (CNN) polega na dostosowywaniu parametrów sieci w celu zminimalizowania funkcji kosztu i poprawy wydajności sieci [2]. Proces optymalizacji prowadzi do lepszego uczenia się przez sieć istotnych cech danych wejściowych, co przekłada się na lepsze wyniki predykcji.
 Optymalizacja w sieciach CNN obejmuje kilka aspektów:
 \begin{itemize}
     \item \textbf{Aktualizacja wag:} Optymalizacja polega na dostosowywaniu wag sieci neuronowej w odpowiedzi na błędy popełniane podczas procesu uczenia. Metody aktualizacji wag, takie jak stochastyczny gradient prosty (SGD) czy adaptacyjne metody optymalizacji (np. Adam, RMSprop), wykorzystują informacje o gradientach funkcji kosztu do aktualizacji wag.
@@ -79,83 +79,75 @@ Optymalizacja w sieciach CNN obejmuje kilka aspektów:
     \item \textbf{Architektura sieci:} Optymalizacja obejmuje również eksperymentowanie z różnymi architekturami sieci, aby znaleźć taką, która najlepiej radzi sobie z konkretnym zadaniem. Warto zbadać istniejące architektury, które odniosły sukces w podobnych problemach, takie jak VGG, ResNet czy Inception.
     \item \textbf{Techniki augmentacji danych:} Optymalizacja może również obejmować zastosowanie technik augmentacji danych, które polegają na wprowadzeniu różnych transformacji na danych wejściowych, takich jak obracanie, przeskalowanie, odbicie lustrzane czy zmiana oświetlenia. Augmentacja danych pomaga sieci lepiej generalizować na nowych danych.
 \end{itemize}
-\subsubsection{Wnioskowanie}
-Wnioskowanie (ang. inference) w konwolucyjnych sieciach neuronowych (CNN) odnosi się do procesu, w którym wcześniej wytrenowana sieć jest stosowana do analizy nowych danych wejściowych i generowania predykcji. W przypadku CNN, wnioskowanie często dotyczy zastosowań takich jak klasyfikacja obrazów, detekcja obiektów czy segmentacja semantyczna.
+
+\textbf{Wnioskowanie} w konwolucyjnych sieciach neuronowych (CNN) odnosi się do procesu, w którym wcześniej wytrenowana sieć jest stosowana do analizy nowych danych wejściowych i generowania predykcji [2]. W przypadku CNN, wnioskowanie często dotyczy zastosowań takich jak klasyfikacja obrazów, detekcja obiektów czy segmentacja semantyczna.
 W procesie wnioskowania, dane wejściowe, takie jak obraz, są przekazywane przez sieć CNN, która przeprowadza szereg operacji w różnych warstwach. Warstwy te obejmują warstwy konwolucyjne, warstwy buforowe (pooling) oraz warstwy w pełni połączone. Każda warstwa analizuje dane wejściowe i ekstrahuje istotne cechy, które są przekazywane do kolejnych warstw sieci.
-W trakcie wnioskowania sieć neuronowa korzysta z wcześniej nauczonej hierarchii cech oraz wag, które zostały optymalizowane podczas procesu treningu. Dzięki tym wagom sieć jest w stanie rozpoznać i klasyfikować nowe dane wejściowe.
+W trakcie wnioskowania sieć neuronowa korzysta z wcześniej nauczonej hierarchii cech oraz wag, które zostały optymalizowane podczas procesu treningu. Dzięki tym wagom sieć jest w stanie rozpoznać i klasyfikować nowe dane wejściowe [2].
 Na końcu sieci znajduje się warstwa wyjściowa, która generuje wynik końcowy, czyli predykcję. W przypadku klasyfikacji obrazów może to być prawdopodobieństwo przynależności obrazu do danej klasy. W detekcji obiektów sieć może generować współrzędne prostokątów otaczających obiekty oraz ich kategorie.
-Wnioskowanie jest zwykle znacznie szybsze niż proces uczenia, ponieważ nie wymaga obliczania gradientów ani aktualizacji wag. Jako że wagi są już wcześniej nauczone, sieć koncentruje się na przeprowadzeniu operacji na nowych danych wejściowych, aby wygenerować predykcję. W przypadku aplikacji w czasie rzeczywistym, takich jak rozpoznawanie mowy czy analiza wideo, szybkość wnioskowania jest kluczowym czynnikiem wpływającym na użyteczność i skuteczność sieci neuronowej.
+Wnioskowanie jest zwykle znacznie szybsze niż proces uczenia, ponieważ nie wymaga obliczania gradientów ani aktualizacji wag. Jako że wagi są już wcześniej nauczone, sieć koncentruje się na przeprowadzeniu operacji na nowych danych wejściowych, aby wygenerować predykcję. W przypadku aplikacji w czasie rzeczywistym, takich jak rozpoznawanie mowy czy analiza wideo, szybkość wnioskowania jest kluczowym czynnikiem wpływającym na użyteczność i skuteczność sieci neuronowej [1].
 \section{Wady produkcyjne i ich rodzaje}
-Wady produkcyjne to niezgodności w procesie wytwarzania, które prowadzą do tego, że produkt nie spełnia wymagań jakościowych. Wady te mogą wynikać z różnych przyczyn, takich jak błędy w procesie produkcyjnym, zużycie sprzętu czy błędy ludzkie. W zależności od charakterystyki produktu i procesu produkcyjnego można wyróżnić różne rodzaje wad produkcyjnych, takie jak:
+Wady produkcyjne to niezgodności w procesie wytwarzania, które prowadzą do tego, że produkt nie spełnia wymagań jakościowych. Wady te mogą wynikać z różnych przyczyn, takich jak błędy w procesie produkcyjnym, zużycie sprzętu czy błędy ludzkie [4]. W zależności od charakterystyki produktu i procesu produkcyjnego można wyróżnić różne rodzaje wad produkcyjnych, takie jak:
 
 \begin{itemize}
-\item \textbf{Wady powierzchniowe:} Dotyczą one uszkodzeń lub nieprawidłowości na powierzchni produktu. Wady te obejmują pęknięcia, zadrapania, zmarszczki, przebarwienia czy zanieczyszczenia na powierzchni wyrobu. Mogą być spowodowane przez niewłaściwe parametry procesu, takie jak temperatury czy ciśnienia, niedostateczną kontrolę jakości surowców lub problemy z utrzymaniem czystości w środowisku produkcyjnym.
+\item \textbf{Wady powierzchniowe:} Dotyczą one uszkodzeń lub nieprawidłowości na powierzchni produktu. Wady te obejmują pęknięcia, zadrapania, zmarszczki, przebarwienia czy zanieczyszczenia na powierzchni wyrobu. Mogą być spowodowane przez niewłaściwe parametry procesu, takie jak temperatury czy ciśnienia, niedostateczną kontrolę jakości surowców lub problemy z utrzymaniem czystości w środowisku produkcyjnym [4].
 
-\item \textbf{Wady geometryczne:} Są to nieprawidłowości związane z wymiarami, kształtami czy wzajemnym położeniem elementów produktu. Wady te obejmują niewłaściwe wymiary, kształty czy położenie części w stosunku do siebie nawzajem. Mogą być spowodowane przez błędy w ustawieniach maszyn, niedokładności w narzędziach pomiarowych czy błędy w projektowaniu produktu.
+\item \textbf{Wady geometryczne:} Są to nieprawidłowości związane z wymiarami, kształtami czy wzajemnym położeniem elementów produktu. Wady te obejmują niewłaściwe wymiary, kształty czy położenie części w stosunku do siebie nawzajem. Mogą być spowodowane przez błędy w ustawieniach maszyn, niedokładności w narzędziach pomiarowych czy błędy w projektowaniu produktu [4].
 
-\item \textbf{Wady materiałowe:} Dotyczą one wad w strukturze materiału, takich jak pęcherze powietrza, porowatość czy zanieczyszczenia. Mogą być spowodowane przez niewłaściwy dobór surowców, problemy z mieszaniem materiałów czy nieodpowiednie warunki procesowe, takie jak szybkość chłodzenia czy czas utwardzania.
+\item \textbf{Wady materiałowe:} Dotyczą one wad w strukturze materiału, takich jak pęcherze powietrza, porowatość czy zanieczyszczenia. Mogą być spowodowane przez niewłaściwy dobór surowców, problemy z mieszaniem materiałów czy nieodpowiednie warunki procesowe, takie jak szybkość chłodzenia czy czas utwardzania [4].
 
-\item \textbf{Wady funkcjonalne:} Są to problemy związane z działaniem produktu, wynikające z nieprawidłowego montażu, błędów w projektowaniu czy wadliwych komponentów. Wady te mogą prowadzić do awarii produktu, niebezpiecznych sytuacji czy niezadowolenia klientów. Przyczyną takich wad może być brak precyzyjności w procesie montażu, niewłaściwy dobór komponentów czy niedostateczna kontrola jakości w trakcie projektowania i produkcji.
+\item \textbf{Wady funkcjonalne:} Są to problemy związane z działaniem produktu, wynikające z nieprawidłowego montażu, błędów w projektowaniu czy wadliwych komponentów. Wady te mogą prowadzić do awarii produktu, niebezpiecznych sytuacji czy niezadowolenia klientów. Przyczyną takich wad może być brak precyzyjności w procesie montażu, niewłaściwy dobór komponentów czy niedostateczna kontrola jakości w trakcie projektowania i produkcji [4].
 
 \end{itemize}
 
-Rozpoznanie i identyfikacja wad produkcyjnych są kluczowe dla utrzymania wysokiej jakości produktów i zadowolenia klientów. Poprzez monitorowanie procesów produkcyjnych, wprowadzenie systemów kontroli jakości oraz analizę przyczyn wad, przedsiębiorstwa mogą zminimalizować występowanie wad produkcyjnych i uniknąć ich negatywnego wpływu na produkty oraz reputację firmy. Oto kilka sposobów, które mogą pomóc w redukcji wad produkcyjnych:
+Rozpoznanie i identyfikacja wad produkcyjnych są kluczowe dla utrzymania wysokiej jakości produktów i zadowolenia klientów. Poprzez monitorowanie procesów produkcyjnych, wprowadzenie systemów kontroli jakości oraz analizę przyczyn wad, przedsiębiorstwa mogą zminimalizować występowanie wad produkcyjnych i uniknąć ich negatywnego wpływu na produkty oraz reputację firmy [9]. Oto kilka sposobów, które mogą pomóc w redukcji wad produkcyjnych:
 
 \begin{itemize}
-\item \textbf{Staranne projektowanie produktu:} Dokładne projektowanie produktu z uwzględnieniem wymagań jakościowych oraz ograniczeń materiałowych i procesowych może pomóc w zapobieganiu wielu wadom produkcyjnym. Współpraca z ekspertami z różnych dziedzin może również pomóc w identyfikacji potencjalnych problemów na etapie projektowania.
+\item \textbf{Staranne projektowanie produktu:} Dokładne projektowanie produktu z uwzględnieniem wymagań jakościowych oraz ograniczeń materiałowych i procesowych może pomóc w zapobieganiu wielu wadom produkcyjnym. Współpraca z ekspertami z różnych dziedzin może również pomóc w identyfikacji potencjalnych problemów na etapie projektowania [9].
 
-\item \textbf{Kontrola jakości surowców:} Przeprowadzanie kontroli jakości dostawców surowców i systematyczne sprawdzanie jakości materiałów przed rozpoczęciem produkcji może pomóc w wykryciu i eliminacji wad materiałowych.
+\item \textbf{Kontrola jakości surowców:} Przeprowadzanie kontroli jakości dostawców surowców i systematyczne sprawdzanie jakości materiałów przed rozpoczęciem produkcji może pomóc w wykryciu i eliminacji wad materiałowych [9].
 
-\item \textbf{Optymalizacja procesów produkcyjnych:} Analiza procesów produkcyjnych w celu identyfikacji i eliminacji źródeł wad może prowadzić do wydajniejszej i bardziej niezawodnej produkcji. Obejmuje to zarówno monitorowanie maszyn i narzędzi, jak i przeglądanie procedur produkcyjnych, aby zapewnić ich zgodność z najlepszymi praktykami.
+\item \textbf{Optymalizacja procesów produkcyjnych:} Analiza procesów produkcyjnych w celu identyfikacji i eliminacji źródeł wad może prowadzić do wydajniejszej i bardziej niezawodnej produkcji[9]. Obejmuje to zarówno monitorowanie maszyn i narzędzi, jak i przeglądanie procedur produkcyjnych, aby zapewnić ich zgodność z najlepszymi praktykami [9].
 
-\item \textbf{Szkolenie pracowników:} Zapewnienie odpowiedniego szkolenia i wsparcia dla pracowników może znacznie zmniejszyć ryzyko błędów ludzkich, które prowadzą do wad produkcyjnych. Regularne szkolenia, aktualizacje wiedzy i umiejętności oraz zrozumienie znaczenia jakości w procesie produkcyjnym są kluczowe dla utrzymania wysokiego standardu pracy.
+\item \textbf{Szkolenie pracowników:} Zapewnienie odpowiedniego szkolenia i wsparcia dla pracowników może znacznie zmniejszyć ryzyko błędów ludzkich, które prowadzą do wad produkcyjnych. Regularne szkolenia, aktualizacje wiedzy i umiejętności oraz zrozumienie znaczenia jakości w procesie produkcyjnym są kluczowe dla utrzymania wysokiego standardu pracy [9].
 
-\item \textbf{Systematyczna kontrola jakości:} Wprowadzenie skutecznych systemów kontroli jakości na każdym etapie produkcji, od projektowania po montaż i wysyłkę, może pomóc w wykrywaniu i eliminacji wad produkcyjnych. Monitorowanie, inspekcje i testy jakościowe powinny być przeprowadzane regularnie, aby zapewnić ciągłe doskonalenie jakości produktów.
+\item \textbf{Systematyczna kontrola jakości:} Wprowadzenie skutecznych systemów kontroli jakości na każdym etapie produkcji, od projektowania po montaż i wysyłkę, może pomóc w wykrywaniu i eliminacji wad produkcyjnych. Monitorowanie, inspekcje i testy jakościowe powinny być przeprowadzane regularnie, aby zapewnić ciągłe doskonalenie jakości produktów [9].
 
-\item \textbf{Analiza przyczyn wad i działania korygujące:} Gdy wady produkcyjne zostaną zidentyfikowane, ważne jest przeprowadzenie dogłębnej analizy przyczyn i wprowadzenie działań korygujących, aby uniknąć powtarzania się tych samych problemów. Analiza przyczyn może obejmować badanie procesów, surowców, maszyn i praktyk pracy, a także analizę danych historycznych dotyczących jakości w celu identyfikacji wzorców i trendów.
+\item \textbf{Analiza przyczyn wad i działania korygujące:} Gdy wady produkcyjne zostaną zidentyfikowane, ważne jest przeprowadzenie dogłębnej analizy przyczyn i wprowadzenie działań korygujących, aby uniknąć powtarzania się tych samych problemów. Analiza przyczyn może obejmować badanie procesów, surowców, maszyn i praktyk pracy, a także analizę danych historycznych dotyczących jakości w celu identyfikacji wzorców i trendów [9].
 
-\item \textbf{Utrzymanie maszyn i sprzętu:} Regularne konserwacje, naprawy i modernizacje maszyn oraz sprzętu są niezbędne, aby zapewnić ich sprawne działanie i minimalizować ryzyko wystąpienia wad produkcyjnych związanych z zużyciem czy uszkodzeniami. Planowanie przeglądów i utrzymania oparte na harmonogramie może zapewnić ciągłą działalność produkcyjną i utrzymanie wysokiej jakości.
+\item \textbf{Utrzymanie maszyn i sprzętu:} Regularne konserwacje, naprawy i modernizacje maszyn oraz sprzętu są niezbędne, aby zapewnić ich sprawne działanie i minimalizować ryzyko wystąpienia wad produkcyjnych związanych z zużyciem czy uszkodzeniami. Planowanie przeglądów i utrzymania oparte na harmonogramie może zapewnić ciągłą działalność produkcyjną i utrzymanie wysokiej jakości [9].
 
-\item \textbf{Wdrożenie technologii monitorujących i kontrolujących:} Implementacja zaawansowanych technologii, takich jak systemy wizyjne, sensory czy algorytmy uczenia maszynowego, może pozwolić na szybsze i bardziej precyzyjne wykrywanie wad produkcyjnych oraz monitorowanie procesów w czasie rzeczywistym. Dzięki temu możliwe jest szybkie reagowanie na problemy i unikanie poważniejszych konsekwencji.
+\item \textbf{Wdrożenie technologii monitorujących i kontrolujących:} Implementacja zaawansowanych technologii, takich jak systemy wizyjne, sensory czy algorytmy uczenia maszynowego, może pozwolić na szybsze i bardziej precyzyjne wykrywanie wad produkcyjnych oraz monitorowanie procesów w czasie rzeczywistym. Dzięki temu możliwe jest szybkie reagowanie na problemy i unikanie poważniejszych konsekwencji [9].
 
-\item \textbf{Adaptacyjne zarządzanie jakością:} Elastyczne podejście do zarządzania jakością, które pozwala na szybkie dostosowywanie się do zmieniających się warunków rynkowych, wymagań klientów czy pojawiających się problemów, może przyczynić się do efektywniejszego radzenia sobie z wadami produkcyjnymi. Współpraca z innymi działami, takimi jak badania i rozwój czy logistyka, może również pomóc w utrzymaniu wysokiej jakości w całym łańcuchu dostaw.
+\item \textbf{Adaptacyjne zarządzanie jakością:} Elastyczne podejście do zarządzania jakością, które pozwala na szybkie dostosowywanie się do zmieniających się warunków rynkowych, wymagań klientów czy pojawiających się problemów, może przyczynić się do efektywniejszego radzenia sobie z wadami produkcyjnymi. Współpraca z innymi działami, takimi jak badania i rozwój czy logistyka, może również pomóc w utrzymaniu wysokiej jakości w całym łańcuchu dostaw [9].
 
 \end{itemize}
 
-Wdrażając te strategie, przedsiębiorstwa mogą zredukować występowanie wad produkcyjnych i dostarczać produkty o wysokiej jakości, które spełniają oczekiwania klientów. Długoterminowe zobowiązanie do doskonalenia jakości i ciągłego ulepszania procesów produkcyjnych może prowadzić do lepszej konkurencyjności, lojalności klientów oraz wzrostu rentowności firmy.
+Wdrażając te strategie, przedsiębiorstwa mogą zredukować występowanie wad produkcyjnych i dostarczać produkty o wysokiej jakości, które spełniają oczekiwania klientów. Długoterminowe zobowiązanie do doskonalenia jakości i ciągłego ulepszania procesów produkcyjnych może prowadzić do lepszej konkurencyjności, lojalności klientów oraz wzrostu rentowności firmy [9].
 
 \section{Istniejące rozwiązania}
-W przemyśle wykorzystuje się wiele technik do wykrywania wad produkcyjnych. Poniżej przedstawiamy obszerny, szczegółowy i techniczny opis istniejących rozwiązań:
-
-\subsection{Kontrola wizualna}
-Tradycyjna kontrola wizualna polega na ręcznym sprawdzaniu produktów przez operatorów, którzy oceniają ich jakość wzrokowo. Kontrola ta może być czasochłonna, niewystarczająco precyzyjna i podatna na błędy ludzkie, a jej efektywność zależy od doświadczenia inspektorów. Chociaż metoda ta jest stosunkowo tania, może prowadzić do niezadowalającej jakości produktów oraz wysokich kosztów związanych z błędami w wykrywaniu wad.
-
-\subsection{Systemy wizyjne}
-Systemy wizyjne to zaawansowane rozwiązania oparte na kamerach oraz algorytmach przetwarzania obrazów. Są one stosowane do automatycznego analizowania produktów pod kątem wad, takich jak nieprawidłowe wymiary czy defekty powierzchniowe. Systemy te mogą być bardziej precyzyjne niż kontrola wizualna, ale często wymagają ręcznego projektowania cech i mogą być trudne do skalowania, gdy liczba różnych produktów czy wad wzrasta.
-
-\subsection{Techniki uczenia maszynowego}
-W celu wykrywania wad produkcyjnych wykorzystuje się również techniki uczenia maszynowego, takie jak maszyny wektorów nośnych (SVM), drzewa decyzyjne czy klasteryzacja. Te metody pozwalają na automatyczne wykrywanie wad na podstawie wcześniej opracowanych cech. Jednakże, wymagają one często ręcznego projektowania cech, co może być czasochłonne i trudne w przypadku złożonych problemów.
-
-\subsection{Uczenie głębokie i sieci konwolucyjne}
-Sieci konwolucyjne (CNN) są jednym z najbardziej zaawansowanych i skutecznych rozwiązań w dziedzinie wykrywania wad produkcyjnych. Dzięki automatycznemu uczeniu się reprezentacji danych, sieci te potrafią wykrywać wady na obrazach z wysoką precyzją i są łatwe do skalowania. Ponadto, uczenie transferowe pozwala na zastosowanie wiedzy uzyskanej z jednego zadania do innego, co ułatwia adaptację modeli do różnych rodzajów wad i procesów produkcyjnych.
-
-\subsection{Internet Rzeczy (IoT) i analiza danych}
-Wykorzystanie technologii Internetu Rzeczy (IoT) w połączeniu z zaawansowanymi technikami analizy danych może przyczynić się do lepszego monitorowania i kontroli procesów produkcyjnych. Inteligentne czujniki i urządzenia IoT mogą zbierać dane ze wszystkich etapów produkcji, takie jak temperatura, ciśnienie, prędkość czy wibracje. Zebrane dane mogą być następnie analizowane w czasie rzeczywistym przy użyciu zaawansowanych algorytmów uczenia maszynowego, aby wykrywać nieprawidłowości w procesie produkcyjnym, które mogą prowadzić do wad.
-
-\section{Wybrany języki programowania}
-
-\subsubsection{Python}
-Python to dynamicznie typowany, interpretowany język programowania wysokiego poziomu, który został stworzony przez Guido van Rossuma i po raz pierwszy opublikowany w 1991 roku. Zyskał ogromną popularność w różnych dziedzinach, w tym w uczeniu maszynowym i uczeniu głębokim, ze względu na kilka istotnych cech.
+W przemyśle wykorzystuje się wiele technik do wykrywania wad produkcyjnych. Poniżej przedstawiono opis wybranych istniejących rozwiązań:
 
 \begin{itemize}
-\item \textbf{Składnia:} Python cechuje się prostą i czytelną składnią, która promuje przejrzystość i łatwość zrozumienia kodu. Białe znaki, takie jak wcięcia, są istotne w Pythonie, co zmusza programistów do stosowania konsekwentnych, dobrze zorganizowanych stylów kodowania.
+    \item \textbf{Kontrola wizualna:} Tradycyjna kontrola wizualna polega na ręcznym sprawdzaniu produktów przez operatorów, którzy oceniają ich jakość wzrokowo. Kontrola ta może być czasochłonna, niewystarczająco precyzyjna i podatna na błędy ludzkie, a jej efektywność zależy od doświadczenia inspektorów. Chociaż metoda ta jest stosunkowo tania, może prowadzić do niezadowalającej jakości produktów oraz wysokich kosztów związanych z błędami w wykrywaniu wad.
+    \item \textbf{Systemy wizyjne:} Systemy wizyjne to zaawansowane rozwiązania oparte na kamerach oraz algorytmach przetwarzania obrazów. Są one stosowane do automatycznego analizowania produktów pod kątem wad, takich jak nieprawidłowe wymiary czy defekty powierzchniowe. Systemy te mogą być bardziej precyzyjne niż kontrola wizualna, ale często wymagają ręcznego projektowania cech i mogą być trudne do skalowania, gdy liczba różnych produktów czy wad wzrasta.
+    \item \textbf{Techniki uczenia maszynowego:} W celu wykrywania wad produkcyjnych wykorzystuje się również techniki uczenia maszynowego, takie jak maszyny wektorów nośnych (SVM), drzewa decyzyjne czy klasteryzacja. Te metody pozwalają na automatyczne wykrywanie wad na podstawie wcześniej opracowanych cech. Jednakże, wymagają one często ręcznego projektowania cech, co może być czasochłonne i trudne w przypadku złożonych problemów.
+    \item \textbf{Uczenie głębokie i sieci konwolucyjne:} Sieci konwolucyjne (CNN) są jednym z najbardziej zaawansowanych i skutecznych rozwiązań w dziedzinie wykrywania wad produkcyjnych. Dzięki automatycznemu uczeniu się reprezentacji danych, sieci te potrafią wykrywać wady na obrazach z wysoką precyzją i są łatwe do skalowania. Ponadto, uczenie transferowe pozwala na zastosowanie wiedzy uzyskanej z jednego zadania do innego, co ułatwia adaptację modeli do różnych rodzajów wad i procesów produkcyjnych [10].
+    \item \textbf{Internet Rzeczy (IoT) i analiza danych:} Wykorzystanie technologii Internetu Rzeczy (IoT) w połączeniu z zaawansowanymi technikami analizy danych może przyczynić się do lepszego monitorowania i kontroli procesów produkcyjnych. Inteligentne czujniki i urządzenia IoT mogą zbierać dane ze wszystkich etapów produkcji, takie jak temperatura, ciśnienie, prędkość czy wibracje. Zebrane dane mogą być następnie analizowane w czasie rzeczywistym przy użyciu zaawansowanych algorytmów uczenia maszynowego, aby wykrywać nieprawidłowości w procesie produkcyjnym, które mogą prowadzić do wad.
+\end{itemize}
 
-\item \textbf{Biblioteki:} Python posiada bogaty ekosystem bibliotek wspierających uczenie maszynowe i uczenie głębokie, co pozwala na tworzenie zaawansowanych modeli z mniejszym nakładem pracy.
+\section{Wybrany język programowania - Python}
 
-\item \textbf{Wsparcie społeczności}: Python cieszy się dużym wsparciem społeczności programistów, co oznacza, że istnieje wiele zasobów online, takich jak dokumentacja, kursy, tutoriale, blogi, fora dyskusyjne i konferencje, które mogą pomóc w nauce i rozwoju umiejętności związanych z uczeniem maszynowym w Pythonie.
+Python to dynamicznie typowany, interpretowany język programowania wysokiego poziomu, który został stworzony przez Guido van Rossuma i po raz pierwszy opublikowany w 1991 roku. Zyskał ogromną popularność w różnych dziedzinach, w tym w uczeniu maszynowym i uczeniu głębokim, ze względu na kilka istotnych cech [7].
 
-\item \textbf{Integracja z innymi językami programowania}: Python można łatwo zintegrować z innymi językami programowania, takimi jak C, C++ czy Fortran, co pozwala na tworzenie wydajnych rozwiązań hybrydowych. Można na przykład pisać kod w Pythonie, który wywołuje funkcje napisane w innych językach, aby zwiększyć wydajność kodu. Takie podejście jest często stosowane w bibliotekach uczenia maszynowego, które używają jądra napisanego w C++ czy Fortranie w celu przyspieszenia obliczeń.
+\begin{itemize}
+\item \textbf{Składnia:} Python cechuje się prostą i czytelną składnią, która promuje przejrzystość i łatwość zrozumienia kodu. Białe znaki, takie jak wcięcia, są istotne w Pythonie, co zmusza programistów do stosowania konsekwentnych, dobrze zorganizowanych stylów kodowania [7].
 
-\item \textbf{Przenośność}: Python jest wieloplatformowy, co oznacza, że może być uruchamiany na różnych systemach operacyjnych, takich jak Windows, macOS czy Linux. Daje to programistom większą swobodę w wyborze środowiska pracy oraz pozwala na łatwe wdrożenie rozwiązań na różne platformy.
+\item \textbf{Biblioteki:} Python posiada bogaty ekosystem bibliotek wspierających uczenie maszynowe i uczenie głębokie, co pozwala na tworzenie zaawansowanych modeli z mniejszym nakładem pracy [7].
+
+\item \textbf{Wsparcie społeczności}: Python cieszy się dużym wsparciem społeczności programistów, co oznacza, że istnieje wiele zasobów online, takich jak dokumentacja, kursy, tutoriale, blogi, fora dyskusyjne i konferencje, które mogą pomóc w nauce i rozwoju umiejętności związanych z uczeniem maszynowym w Pythonie [7].
+
+\item \textbf{Integracja z innymi językami programowania}: Python można łatwo zintegrować z innymi językami programowania, takimi jak C, C++ czy Fortran, co pozwala na tworzenie wydajnych rozwiązań hybrydowych. Można na przykład pisać kod w Pythonie, który wywołuje funkcje napisane w innych językach, aby zwiększyć wydajność kodu. Takie podejście jest często stosowane w bibliotekach uczenia maszynowego, które używają jądra napisanego w C++ czy Fortranie w celu przyspieszenia obliczeń [7].
+
+\item \textbf{Przenośność}: Python jest wieloplatformowy, co oznacza, że może być uruchamiany na różnych systemach operacyjnych, takich jak Windows, macOS czy Linux. Daje to programistom większą swobodę w wyborze środowiska pracy oraz pozwala na łatwe wdrożenie rozwiązań na różne platformy [7].
 
 \end{itemize}
