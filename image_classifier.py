@@ -8,7 +8,7 @@ import os
 import cv2
 
 # Ustawienie ścieżki do modelu
-model_path = os.path.join('models', 'imageclassicationversionlive.h5')
+model_path = os.path.join('models', 'screws.h5')
 
 # Wczytaj nauczony model
 try:
